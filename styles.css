@@ -1,0 +1,713 @@
+/* ========================================
+   VARIABLES & GENERAL STYLES
+   ======================================== */
+
+:root {
+    --black: #000000;
+    --orange: #E7760D;
+    --brown: #53483E;
+    --light-gray: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--black);
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+.navbar {
+    background-color: var(--black);
+    border-bottom: 2px solid var(--orange);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--orange);
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--orange);
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.header {
+    max-width: 800px;
+    margin: 3rem auto;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.header-content {
+    position: relative;
+}
+
+.header-image {
+    width: 100%;
+    border: 5px solid var(--orange);
+    border-radius: 0 0 50px 50px;
+    display: block;
+}
+
+.video-toggle-btn {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--orange);
+    color: var(--black);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.video-toggle-btn:hover {
+    background-color: #ff8c1f;
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* ========================================
+   VIDEO MODAL
+   ======================================== */
+
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 2rem;
+}
+
+.video-modal.hidden {
+    display: none;
+}
+
+.video-modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background-color: var(--black);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--orange);
+    color: var(--black);
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1001;
+    font-weight: bold;
+}
+
+.video-close-btn:hover {
+    background-color: #ff8c1f;
+}
+
+.video-container {
+    width: 100%;
+    max-width: 900px;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-mute-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--orange);
+    color: var(--black);
+    border: none;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.video-mute-btn:hover {
+    background-color: #ff8c1f;
+}
+
+/* ========================================
+   WELCOME SECTION
+   ======================================== */
+
+.welcome-section {
+    max-width: 1000px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.welcome-header {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--orange);
+    margin-bottom: -2rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-box {
+    background-color: var(--black);
+    border: 4px solid var(--orange);
+    border-radius: 20px;
+    padding: 3rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.welcome-box h2 {
+    color: var(--orange);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-box p {
+    color: var(--orange);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================
+   ARTISTS SECTION
+   ======================================== */
+
+.artists-section {
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.artists-header {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--orange);
+    margin-bottom: -2rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+.artists-grid {
+    background-color: var(--brown);
+    border: 5px solid var(--orange);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.artist-card {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.artist-card:hover {
+    transform: scale(1.05);
+}
+
+.artist-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.artist-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    border: 3px solid var(--orange);
+    border-radius: 5px;
+}
+
+.artist-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--orange);
+    color: var(--black);
+    padding: 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 100%);
+    padding-bottom: 1.5rem;
+}
+
+/* ========================================
+   ARTIST MODAL
+   ======================================== */
+
+.artist-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.artist-modal.hidden {
+    display: none;
+}
+
+.artist-modal-content {
+    position: relative;
+    background-color: var(--black);
+    border: 4px solid var(--orange);
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 900px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.artist-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--orange);
+    color: var(--black);
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1001;
+    font-weight: bold;
+}
+
+.artist-close-btn:hover {
+    background-color: #ff8c1f;
+}
+
+.modal-artist-image {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid var(--orange);
+}
+
+.artist-info h2 {
+    color: var(--orange);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.artist-info p {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.artist-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.link-btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px 15px;
+    border: 2px solid var(--orange);
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-btn:hover {
+    background-color: var(--orange);
+    color: var(--black);
+    transform: translateY(-2px);
+}
+
+.spotify-btn {
+    color: #1DB954;
+}
+
+.spotify-btn:hover {
+    background-color: #1DB954;
+    border-color: #1DB954;
+    color: var(--black);
+}
+
+.apple-btn {
+    color: #FA243C;
+}
+
+.apple-btn:hover {
+    background-color: #FA243C;
+    border-color: #FA243C;
+    color: #ffffff;
+}
+
+.amazon-btn {
+    color: #FF9900;
+}
+
+.amazon-btn:hover {
+    background-color: #FF9900;
+    border-color: #FF9900;
+    color: #000;
+}
+
+.beatport-btn {
+    color: #00D1FF;
+}
+
+.beatport-btn:hover {
+    background-color: #00D1FF;
+    border-color: #00D1FF;
+    color: var(--black);
+}
+
+.youtube-btn {
+    color: #FF0000;
+}
+
+.youtube-btn:hover {
+    background-color: #FF0000;
+    border-color: #FF0000;
+    color: #ffffff;
+}
+
+/* ========================================
+   YOUTUBE SECTION
+   ======================================== */
+
+.youtube-section {
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.youtube-header {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--orange);
+    margin-bottom: -2rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+.youtube-container {
+    background-color: var(--black);
+    border: 5px solid var(--orange);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.youtube-container iframe {
+    border-radius: 10px;
+}
+
+/* ========================================
+   NEWSLETTER SECTION
+   ======================================== */
+
+.newsletter-section {
+    max-width: 1000px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.newsletter-header {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--orange);
+    margin-bottom: -2rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+.newsletter-box {
+    background-color: var(--black);
+    border: 4px solid var(--orange);
+    border-radius: 20px;
+    padding: 3rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.newsletter-box h3 {
+    color: var(--orange);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-box p {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 12px;
+    border: 2px solid var(--orange);
+    border-radius: 5px;
+    background-color: var(--black);
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: #888;
+}
+
+.newsletter-form label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.newsletter-form input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.submit-btn {
+    background-color: var(--orange);
+    color: var(--black);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #ff8c1f;
+    transform: scale(1.05);
+}
+
+/* ========================================
+   FOOTER / IMPRESSUM
+   ======================================== */
+
+.footer {
+    background-color: var(--brown);
+    border-top: 5px solid var(--orange);
+    padding: 3rem 2rem;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content h3 {
+    color: var(--orange);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-content p {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    line-height: 1.8;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .welcome-header,
+    .artists-header,
+    .youtube-header,
+    .newsletter-header {
+        font-size: 1.8rem;
+    }
+
+    .welcome-box,
+    .newsletter-box {
+        padding: 2rem;
+    }
+
+    .artist-modal-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .artists-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .link-btn {
+        min-width: 100px;
+        padding: 10px 12px;
+        font-size: 0.8rem;
+    }
+
+    .artist-links {
+        gap: 0.5rem;
+    }
+
+    .video-toggle-btn {
+        bottom: -50px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-header,
+    .artists-header,
+    .youtube-header,
+    .newsletter-header {
+        font-size: 1.5rem;
+    }
+
+    .welcome-box h2,
+    .artist-info h2 {
+        font-size: 1.3rem;
+    }
+
+    .artists-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .artist-image {
+        height: 250px;
+    }
+
+    .newsletter-form {
+        gap: 0.8rem;
+    }
+
+    .artist-links {
+        flex-direction: column;
+    }
+
+    .link-btn {
+        width: 100%;
+    }
+
+    .video-modal-content {
+        padding: 1rem;
+    }
+}
