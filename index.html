@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROKKO! Records - Label</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">ROKKO! Records</a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#artists">Artists</a></li>
+                <li><a href="#youtube">Videos</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+                <li><a href="#impressum">Impressum</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header mit Video-Popup -->
+    <header id="home" class="header">
+        <div class="header-content">
+            <img src="images/header-placeholder.png" alt="ROKKO! Records Header" class="header-image">
+            <button class="video-toggle-btn" id="videoToggle">▶ Video abspielen</button>
+        </div>
+    </header>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal hidden">
+        <div class="video-modal-content">
+            <button class="video-close-btn" id="videoClose">&times;</button>
+            <div class="video-container">
+                <video id="introVideo" controls muted>
+                    <source src="videos/intro-web.mp4" type="video/mp4">
+                    Dein Browser unterstützt HTML5 Videos nicht.
+                </video>
+            </div>
+            <button class="video-mute-btn" id="videoMute">🔇 Ton aus</button>
+        </div>
+    </div>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <div class="welcome-header">Willkommen</div>
+        <div class="welcome-box">
+            <h2>Wir sind ROKKO! Records</h2>
+            <p>Unser Herz schlägt im Pott</p>
+            <p>Unsere Ohrmusckel-Propaganda ist grenzenlos</p>
+            <br>
+            <p>Denn ROKKO! hat kein Genre, keine Farbe, keine Schublade. Aber ROKKO! ist neurodiverse und arbeitet nur mit Künstlern aus dem Spektrum zusammen.</p>
+            <br>
+            <p>Da wir Künstler aus dem Spektrum uns oft eher unserm selbstdarstellen, wird bei ROKKO! Das Augenmerk der Ohrmusckel geschenkt.</p>
+        </div>
+    </section>
+
+    <!-- Artists Section -->
+    <section id="artists" class="artists-section">
+        <div class="artists-header">Projekte</div>
+        <div class="artists-grid">
+            <div class="artist-card" data-artist="skaramush-vandango">
+                <img src="images/skaramush-vandango.png" alt="SkaRamush Vandango" class="artist-image">
+                <div class="artist-label">SKARAMUSH VANDANGO</div>
+            </div>
+            <div class="artist-card" data-artist="silberstreif">
+                <img src="images/silberstreif.png" alt="Silberstreif" class="artist-image">
+                <div class="artist-label">SILBERSTREIF</div>
+            </div>
+            <div class="artist-card" data-artist="anger-uschis">
+                <img src="images/anger-uschis.png" alt="Anger Uschis" class="artist-image">
+                <div class="artist-label">ANGER USCHIS</div>
+            </div>
+            <div class="artist-card" data-artist="henri-bellieu">
+                <img src="images/henri-bellieu.png" alt="Henri Bellieu" class="artist-image">
+                <div class="artist-label">HENRI BELLIEU</div>
+            </div>
+            <div class="artist-card" data-artist="fleur-et-beunie">
+                <img src="images/fleur-et-beunie.png" alt="Fléur et Beunié" class="artist-image">
+                <div class="artist-label">FLÉUR ET BEUNIÉ</div>
+            </div>
+            <div class="artist-card" data-artist="sukram">
+                <img src="images/sukram.png" alt="SUKRAM" class="artist-image">
+                <div class="artist-label">SUKRAM</div>
+            </div>
+            <div class="artist-card" data-artist="anthony-sinclair">
+                <img src="images/anthony-sinclair.png" alt="Anthony Sinclair" class="artist-image">
+                <div class="artist-label">ANTHONY SINCLAIR</div>
+            </div>
+            <div class="artist-card" data-artist="rokko-logo">
+                <img src="images/rokko-logo.png" alt="ROKKO! Records" class="artist-image">
+                <div class="artist-label">SKARAMUSH VANDANGO</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artist Detail Modal -->
+    <div id="artistModal" class="artist-modal hidden">
+        <div class="artist-modal-content">
+            <button class="artist-close-btn" id="artistClose">&times;</button>
+            <div class="artist-detail-container">
+                <img id="modalArtistImage" src="" alt="" class="modal-artist-image">
+                <div class="artist-info">
+                    <h2 id="modalArtistName"></h2>
+                    <p id="modalArtistBio"></p>
+                    <div class="artist-links">
+                        <a href="#" class="link-btn spotify-btn" target="_blank">
+                            <span>Spotify</span>
+                        </a>
+                        <a href="#" class="link-btn apple-btn" target="_blank">
+                            <span>Apple Music</span>
+                        </a>
+                        <a href="#" class="link-btn amazon-btn" target="_blank">
+                            <span>Amazon</span>
+                        </a>
+                        <a href="#" class="link-btn beatport-btn" target="_blank">
+                            <span>Beatport</span>
+                        </a>
+                        <a href="#" class="link-btn youtube-btn" target="_blank">
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- YouTube Section -->
+    <section id="youtube" class="youtube-section">
+        <div class="youtube-header">YouTube</div>
+        <div class="youtube-container">
+            <iframe width="100%" height="600" src="https://www.youtube.com/embed/videoseries?list=PLMt6M5G2Twu-VVcXn7j7_7wRnYwLRche-" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter-section">
+        <div class="newsletter-header">Newsletter</div>
+        <div class="newsletter-box">
+            <h3>Bleib auf dem Laufenden!</h3>
+            <p>Erhalte regelmäßige Updates zu neuen Releases, Events und Neuigkeiten von ROKKO! Records.</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Deine Email-Adresse" required>
+                <label>
+                    <input type="checkbox" required>
+                    Ich bin damit einverstanden, dass meine Email-Adresse zur Kontaktaufnahme verwendet wird.
+                </label>
+                <button type="submit" class="submit-btn">Anmelden</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Impressum Section -->
+    <footer id="impressum" class="footer">
+        <div class="footer-content">
+            <h3>Impressum</h3>
+            <p><strong>ROKKO! Records</strong></p>
+            <p>Markus Ilgner<br>
+            Am Brunnen 3<br>
+            47279 Duisburg<br>
+            Mail: folgt noch</p>
+            <p>&copy; 2026 ROKKO! Records. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
