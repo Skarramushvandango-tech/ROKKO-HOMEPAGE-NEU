@@ -6,7 +6,6 @@
     --black: #000000;
     --orange: #E7760D;
     --brown: #53483E;
-    --light-gray: #f5f5f5;
 }
 
 * {
@@ -27,91 +26,27 @@ body {
 }
 
 /* ========================================
-   NAVIGATION
-   ======================================== */
-
-.navbar {
-    background-color: var(--black);
-    border-bottom: 2px solid var(--orange);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--orange);
-    text-decoration: none;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-menu a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.nav-menu a:hover {
-    color: var(--orange);
-}
-
-/* ========================================
-   HEADER
+   HEADER - FULL WIDTH, NO NAVBAR
    ======================================== */
 
 .header {
-    max-width: 800px;
-    margin: 3rem auto;
-    position: relative;
-    padding: 0 2rem;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
 }
 
 .header-content {
+    width: 100%;
     position: relative;
 }
 
 .header-image {
     width: 100%;
+    height: auto;
+    display: block;
     border: 5px solid var(--orange);
     border-radius: 0 0 50px 50px;
-    display: block;
-}
-
-.video-toggle-btn {
-    position: absolute;
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--orange);
-    color: var(--black);
-    border: none;
-    padding: 12px 30px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.video-toggle-btn:hover {
-    background-color: #ff8c1f;
-    transform: translateX(-50%) scale(1.05);
 }
 
 /* ========================================
@@ -237,7 +172,7 @@ body {
 }
 
 /* ========================================
-   ARTISTS SECTION
+   ARTISTS SECTION - EXACT GRID LAYOUT
    ======================================== */
 
 .artists-section {
@@ -257,19 +192,27 @@ body {
     z-index: 1;
 }
 
-.artists-grid {
+.artists-container {
     background-color: var(--brown);
     border: 5px solid var(--orange);
     border-radius: 20px;
     padding: 2rem;
     margin-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
 }
 
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 600px;
+}
+
+/* ========================================
+   ARTIST CARD - PERFECT SQUARES
+   ======================================== */
+
 .artist-card {
-    position: relative;
+    aspect-ratio: 1 / 1;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
@@ -278,19 +221,20 @@ body {
     transform: scale(1.05);
 }
 
-.artist-card {
+.artist-image-wrapper {
     position: relative;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border: 5px solid var(--orange);
     border-radius: 5px;
+    overflow: hidden;
 }
 
 .artist-image {
     width: 100%;
-    height: 280px;
+    height: 100%;
     object-fit: cover;
     display: block;
-    border: 3px solid var(--orange);
-    border-radius: 5px;
 }
 
 .artist-label {
@@ -301,11 +245,12 @@ body {
     background-color: var(--orange);
     color: var(--black);
     padding: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: bold;
     text-transform: uppercase;
     clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 100%);
     padding-bottom: 1.5rem;
+    text-align: center;
 }
 
 /* ========================================
@@ -342,7 +287,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .artist-close-btn {
@@ -394,7 +339,7 @@ body {
 
 .link-btn {
     flex: 1;
-    min-width: 120px;
+    min-width: 100px;
     padding: 12px 15px;
     border: 2px solid var(--orange);
     border-radius: 5px;
@@ -406,6 +351,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--orange);
 }
 
 .link-btn:hover {
@@ -414,55 +360,20 @@ body {
     transform: translateY(-2px);
 }
 
-.spotify-btn {
-    color: #1DB954;
-}
+.spotify-btn { color: #1DB954; }
+.spotify-btn:hover { background-color: #1DB954; border-color: #1DB954; color: var(--black); }
 
-.spotify-btn:hover {
-    background-color: #1DB954;
-    border-color: #1DB954;
-    color: var(--black);
-}
+.apple-btn { color: #FA243C; }
+.apple-btn:hover { background-color: #FA243C; border-color: #FA243C; color: #ffffff; }
 
-.apple-btn {
-    color: #FA243C;
-}
+.amazon-btn { color: #FF9900; }
+.amazon-btn:hover { background-color: #FF9900; border-color: #FF9900; color: var(--black); }
 
-.apple-btn:hover {
-    background-color: #FA243C;
-    border-color: #FA243C;
-    color: #ffffff;
-}
+.beatport-btn { color: #00D1FF; }
+.beatport-btn:hover { background-color: #00D1FF; border-color: #00D1FF; color: var(--black); }
 
-.amazon-btn {
-    color: #FF9900;
-}
-
-.amazon-btn:hover {
-    background-color: #FF9900;
-    border-color: #FF9900;
-    color: #000;
-}
-
-.beatport-btn {
-    color: #00D1FF;
-}
-
-.beatport-btn:hover {
-    background-color: #00D1FF;
-    border-color: #00D1FF;
-    color: var(--black);
-}
-
-.youtube-btn {
-    color: #FF0000;
-}
-
-.youtube-btn:hover {
-    background-color: #FF0000;
-    border-color: #FF0000;
-    color: #ffffff;
-}
+.youtube-btn { color: #FF0000; }
+.youtube-btn:hover { background-color: #FF0000; border-color: #FF0000; color: #ffffff; }
 
 /* ========================================
    YOUTUBE SECTION
@@ -623,17 +534,6 @@ body {
    ======================================== */
 
 @media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .nav-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-    }
-
     .welcome-header,
     .artists-header,
     .youtube-header,
@@ -652,8 +552,7 @@ body {
     }
 
     .artists-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .link-btn {
@@ -666,10 +565,8 @@ body {
         gap: 0.5rem;
     }
 
-    .video-toggle-btn {
-        bottom: -50px;
-        padding: 10px 20px;
-        font-size: 0.9rem;
+    .header-image {
+        border-radius: 0;
     }
 }
 
@@ -688,11 +585,6 @@ body {
 
     .artists-grid {
         grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-
-    .artist-image {
-        height: 250px;
     }
 
     .newsletter-form {
@@ -709,5 +601,13 @@ body {
 
     .video-modal-content {
         padding: 1rem;
+    }
+
+    .youtube-container {
+        padding: 1rem;
+    }
+
+    .youtube-container iframe {
+        height: 300px;
     }
 }
