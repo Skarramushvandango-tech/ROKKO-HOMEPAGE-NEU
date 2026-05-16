@@ -90,17 +90,10 @@ const artistsData = {
 // VIDEO MODAL FUNCTIONALITY
 // ========================================
 
-const videoToggle = document.getElementById('videoToggle');
 const videoModal = document.getElementById('videoModal');
 const videoClose = document.getElementById('videoClose');
 const introVideo = document.getElementById('introVideo');
 const videoMute = document.getElementById('videoMute');
-
-// Video öffnen
-videoToggle.addEventListener('click', () => {
-    videoModal.classList.remove('hidden');
-    introVideo.play();
-});
 
 // Video schließen
 videoClose.addEventListener('click', () => {
@@ -137,7 +130,13 @@ const artistClose = document.getElementById('artistClose');
 const modalArtistImage = document.getElementById('modalArtistImage');
 const modalArtistName = document.getElementById('modalArtistName');
 const modalArtistBio = document.getElementById('modalArtistBio');
-const artistLinks = document.querySelectorAll('.artist-links .link-btn');
+const artistLinkButtons = {
+    spotify: document.querySelector('.spotify-btn'),
+    apple: document.querySelector('.apple-btn'),
+    amazon: document.querySelector('.amazon-btn'),
+    beatport: document.querySelector('.beatport-btn'),
+    youtube: document.querySelector('.youtube-btn')
+};
 
 // Artist Card Click
 artistCards.forEach(card => {
@@ -152,21 +151,11 @@ artistCards.forEach(card => {
             modalArtistBio.textContent = artist.bio;
             
             // Links aktualisieren
-            const links = [
-                { selector: '.spotify-btn', url: artist.links.spotify, platform: 'Spotify' },
-                { selector: '.apple-btn', url: artist.links.apple, platform: 'Apple Music' },
-                { selector: '.amazon-btn', url: artist.links.amazon, platform: 'Amazon' },
-                { selector: '.beatport-btn', url: artist.links.beatport, platform: 'Beatport' },
-                { selector: '.youtube-btn', url: artist.links.youtube, platform: 'YouTube' }
-            ];
-            
-            links.forEach(link => {
-                const btn = document.querySelector(link.selector);
-                if (btn) {
-                    btn.href = link.url;
-                    btn.textContent = link.platform;
-                }
-            });
+            artistLinkButtons.spotify.href = artist.links.spotify;
+            artistLinkButtons.apple.href = artist.links.apple;
+            artistLinkButtons.amazon.href = artist.links.amazon;
+            artistLinkButtons.beatport.href = artist.links.beatport;
+            artistLinkButtons.youtube.href = artist.links.youtube;
             
             // Modal öffnen
             artistModal.classList.remove('hidden');
@@ -197,7 +186,6 @@ newsletterForm.addEventListener('submit', (e) => {
     
     const emailInput = newsletterForm.querySelector('input[type="email"]');
     const checkbox = newsletterForm.querySelector('input[type="checkbox"]');
-    const submitBtn = newsletterForm.querySelector('.submit-btn');
     
     // Validierung
     if (!emailInput.value) {
@@ -218,26 +206,8 @@ newsletterForm.addEventListener('submit', (e) => {
 });
 
 // ========================================
-// SMOOTH SCROLLING
-// ========================================
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// ========================================
 // CONSOLE WELCOME MESSAGE
 // ========================================
 
 console.log('%c🎵 Willkommen zu ROKKO! Records 🎵', 'font-size: 24px; color: #E7760D; font-weight: bold;');
 console.log('%cDas Label für neurodiverse Künstler aus dem Spektrum', 'font-size: 14px; color: #E7760D;');
-console.log('%cWebsite by Skarramushvandango-tech', 'font-size: 12px; color: #888;');
