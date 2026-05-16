@@ -6,11 +6,11 @@
     <title>ROKKO! Records - Label</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-    <!-- Header mit Video-Popup -->
+<body>
+    <!-- Header mit Video-Popup - NO NAVBAR -->
     <header id="home" class="header">
         <div class="header-content">
             <img src="images/header-placeholder.png" alt="ROKKO! Records Header" class="header-image">
-            <button class="video-toggle-btn" id="videoToggle">▶ Video abspielen</button>
         </div>
     </header>
 
@@ -19,7 +19,7 @@
         <div class="video-modal-content">
             <button class="video-close-btn" id="videoClose">&times;</button>
             <div class="video-container">
-                <video id="introVideo" controls muted>
+                <video id="introVideo" controls muted autoplay>
                     <source src="videos/intro-web.mp4" type="video/mp4">
                     Dein Browser unterstützt HTML5 Videos nicht.
                 </video>
@@ -45,38 +45,44 @@
     <!-- Artists Section -->
     <section id="artists" class="artists-section">
         <div class="artists-header">Projekte</div>
-        <div class="artists-grid">
-            <div class="artist-card" data-artist="skaramush-vandango">
-                <img src="images/skaramush-vandango.png" alt="SkaRamush Vandango" class="artist-image">
-                <div class="artist-label">SKARAMUSH VANDANGO</div>
-            </div>
-            <div class="artist-card" data-artist="silberstreif">
-                <img src="images/silberstreif.png" alt="Silberstreif" class="artist-image">
-                <div class="artist-label">SILBERSTREIF</div>
-            </div>
-            <div class="artist-card" data-artist="anger-uschis">
-                <img src="images/anger-uschis.png" alt="Anger Uschis" class="artist-image">
-                <div class="artist-label">ANGER USCHIS</div>
-            </div>
-            <div class="artist-card" data-artist="henri-bellieu">
-                <img src="images/henri-bellieu.png" alt="Henri Bellieu" class="artist-image">
-                <div class="artist-label">HENRI BELLIEU</div>
-            </div>
-            <div class="artist-card" data-artist="fleur-et-beunie">
-                <img src="images/fleur-et-beunie.png" alt="Fléur et Beunié" class="artist-image">
-                <div class="artist-label">FLÉUR ET BEUNIÉ</div>
-            </div>
-            <div class="artist-card" data-artist="sukram">
-                <img src="images/sukram.png" alt="SUKRAM" class="artist-image">
-                <div class="artist-label">SUKRAM</div>
-            </div>
-            <div class="artist-card" data-artist="anthony-sinclair">
-                <img src="images/anthony-sinclair.png" alt="Anthony Sinclair" class="artist-image">
-                <div class="artist-label">ANTHONY SINCLAIR</div>
-            </div>
-            <div class="artist-card" data-artist="rokko-logo">
-                <img src="images/rokko-logo.png" alt="ROKKO! Records" class="artist-image">
-                <div class="artist-label">SKARAMUSH VANDANGO</div>
+        <div class="artists-container">
+            <div class="artists-grid">
+                <div class="artist-card" data-artist="skaramush-vandango">
+                    <div class="artist-image-wrapper">
+                        <img src="images/skaramush-vandango.png" alt="SkaRamush Vandango" class="artist-image">
+                        <div class="artist-label">SKARAMUSH<br>VANDANGO</div>
+                    </div>
+                </div>
+                <div class="artist-card" data-artist="silberstreif">
+                    <div class="artist-image-wrapper">
+                        <img src="images/silberstreif.png" alt="Silberstreif" class="artist-image">
+                        <div class="artist-label">SILBERSTREIF</div>
+                    </div>
+                </div>
+                <div class="artist-card" data-artist="anger-uschis">
+                    <div class="artist-image-wrapper">
+                        <img src="images/anger-uschis.png" alt="Anger Uschis" class="artist-image">
+                        <div class="artist-label">ANGER USCHIS</div>
+                    </div>
+                </div>
+                <div class="artist-card" data-artist="henri-bellieu">
+                    <div class="artist-image-wrapper">
+                        <img src="images/henri-bellieu.png" alt="Henri Bellieu" class="artist-image">
+                        <div class="artist-label">HENRI BELLIEU</div>
+                    </div>
+                </div>
+                <div class="artist-card" data-artist="fleur-et-beunie">
+                    <div class="artist-image-wrapper">
+                        <img src="images/fleur-et-beunie.png" alt="Fléur et Beunié" class="artist-image">
+                        <div class="artist-label">FLÉUR ET<br>BEUNIÉ</div>
+                    </div>
+                </div>
+                <div class="artist-card" data-artist="sukram">
+                    <div class="artist-image-wrapper">
+                        <img src="images/sukram.png" alt="SUKRAM" class="artist-image">
+                        <div class="artist-label">SUKRAM</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -85,28 +91,16 @@
     <div id="artistModal" class="artist-modal hidden">
         <div class="artist-modal-content">
             <button class="artist-close-btn" id="artistClose">&times;</button>
-            <div class="artist-detail-container">
-                <img id="modalArtistImage" src="" alt="" class="modal-artist-image">
-                <div class="artist-info">
-                    <h2 id="modalArtistName"></h2>
-                    <p id="modalArtistBio"></p>
-                    <div class="artist-links">
-                        <a href="#" class="link-btn spotify-btn" target="_blank">
-                            <span>Spotify</span>
-                        </a>
-                        <a href="#" class="link-btn apple-btn" target="_blank">
-                            <span>Apple Music</span>
-                        </a>
-                        <a href="#" class="link-btn amazon-btn" target="_blank">
-                            <span>Amazon</span>
-                        </a>
-                        <a href="#" class="link-btn beatport-btn" target="_blank">
-                            <span>Beatport</span>
-                        </a>
-                        <a href="#" class="link-btn youtube-btn" target="_blank">
-                            <span>YouTube</span>
-                        </a>
-                    </div>
+            <img id="modalArtistImage" src="" alt="" class="modal-artist-image">
+            <div class="artist-info">
+                <h2 id="modalArtistName"></h2>
+                <p id="modalArtistBio"></p>
+                <div class="artist-links">
+                    <a href="#" class="link-btn spotify-btn" target="_blank">Spotify</a>
+                    <a href="#" class="link-btn apple-btn" target="_blank">Apple Music</a>
+                    <a href="#" class="link-btn amazon-btn" target="_blank">Amazon</a>
+                    <a href="#" class="link-btn beatport-btn" target="_blank">Beatport</a>
+                    <a href="#" class="link-btn youtube-btn" target="_blank">YouTube</a>
                 </div>
             </div>
         </div>
