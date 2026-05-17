@@ -1,109 +1,99 @@
-// Artist Data
+// Artist Data with full descriptions
 const artistsData = {
     'skaramush-vandango': {
         name: 'SkaRamush Vandango',
+        bio: 'SkaRamush ist der LabelChef von ROKKO! Records und auch der Writer, Produzent und DJ. Er ist bereits seit 2004 als Produzent und DJ unterwegs und arbeitet gerade an seinem Album: Neurodiverse Sound Design.',
         image: 'images/skaramush-vandango.png',
-        bio: 'SkaRamush ist der LabelChef von ROKKO! Records und auch der Writer, Produzent und DJ. Er ist bereits seit 2004 als Produzent und DJ unterwegs und arbeitet gerade an seinem Album: NeuroCentric, welches sich um sein Leben als Autist beschäftigen wird.',
         links: {
-            spotify: 'https://open.spotify.com/artist/YOUR_ARTIST_ID',
-            appleMusic: 'https://music.apple.com/artist/YOUR_ARTIST_ID',
-            amazon: 'https://music.amazon.com/artists/YOUR_ARTIST_ID',
-            beatport: 'https://www.beatport.com/artist/YOUR_ARTIST_ID',
-            youtube: 'https://www.youtube.com/@YOUR_CHANNEL'
+            spotify: 'https://open.spotify.com/artist/PLACEHOLDER',
+            appleMusic: 'https://music.apple.com/artist/PLACEHOLDER',
+            amazon: 'https://music.amazon.com/artists/PLACEHOLDER',
+            beatport: 'https://www.beatport.com/artist/PLACEHOLDER',
+            youtube: 'https://www.youtube.com/@PLACEHOLDER'
         }
     },
     'silberstreif': {
         name: 'Silberstreif',
-        image: 'images/silberstreif.png',
         bio: 'Ihre Single flammend Herz avanciert bereits in kleineren Clubs zum Sommerhit und liefert den Soundtrack zum süßen Schmerz der sommerlichen Liebschaften.',
+        image: 'images/silberstreif.png',
         links: {
-            spotify: 'https://open.spotify.com/artist/YOUR_ARTIST_ID',
-            appleMusic: 'https://music.apple.com/artist/YOUR_ARTIST_ID',
-            amazon: 'https://music.amazon.com/artists/YOUR_ARTIST_ID',
-            beatport: 'https://www.beatport.com/artist/YOUR_ARTIST_ID',
-            youtube: 'https://www.youtube.com/@YOUR_CHANNEL'
+            spotify: 'https://open.spotify.com/artist/PLACEHOLDER',
+            appleMusic: 'https://music.apple.com/artist/PLACEHOLDER',
+            amazon: 'https://music.amazon.com/artists/PLACEHOLDER',
+            beatport: 'https://www.beatport.com/artist/PLACEHOLDER',
+            youtube: 'https://www.youtube.com/@PLACEHOLDER'
         }
     },
     'anger-uschis': {
         name: 'Anger Uschis',
-        image: 'images/anger-uschis.png',
         bio: 'Mit ihrem Debütalbum "politisch inkontinent" liefern die Anger Uschis ein politisch orientiertes Mahnmal gegen Hass, Hetze und Faschismus.',
+        image: 'images/anger-uschis.png',
         links: {
-            spotify: 'https://open.spotify.com/artist/YOUR_ARTIST_ID',
-            appleMusic: 'https://music.apple.com/artist/YOUR_ARTIST_ID',
-            amazon: 'https://music.amazon.com/artists/YOUR_ARTIST_ID',
-            beatport: 'https://www.beatport.com/artist/YOUR_ARTIST_ID',
-            youtube: 'https://www.youtube.com/@YOUR_CHANNEL'
+            spotify: 'https://open.spotify.com/artist/PLACEHOLDER',
+            appleMusic: 'https://music.apple.com/artist/PLACEHOLDER',
+            amazon: 'https://music.amazon.com/artists/PLACEHOLDER',
+            beatport: 'https://www.beatport.com/artist/PLACEHOLDER',
+            youtube: 'https://www.youtube.com/@PLACEHOLDER'
         }
     },
     'henri-bellieu': {
         name: 'Henri Bellieu',
+        bio: 'Der Franzose liefert mit seiner Single la Femme bereits seine zweite Ode an die Weiblichkeit und feierte mit petite Colibri im letzten Jahr einen charmanten Einstieg in die Welt der Musik.',
         image: 'images/henri-bellieu.png',
-        bio: 'Der Franzose liefert mit seiner Single la Femme bereits seine zweite Ode an die Weiblichkeit und feierte mit petite Colibri im letzten Jahr einen charmanten Einstieg in die Welt der Popmusik.',
         links: {
-            spotify: 'https://open.spotify.com/artist/YOUR_ARTIST_ID',
-            appleMusic: 'https://music.apple.com/artist/YOUR_ARTIST_ID',
-            amazon: 'https://music.amazon.com/artists/YOUR_ARTIST_ID',
-            beatport: 'https://www.beatport.com/artist/YOUR_ARTIST_ID',
-            youtube: 'https://www.youtube.com/@YOUR_CHANNEL'
+            spotify: 'https://open.spotify.com/artist/PLACEHOLDER',
+            appleMusic: 'https://music.apple.com/artist/PLACEHOLDER',
+            amazon: 'https://music.amazon.com/artists/PLACEHOLDER',
+            beatport: 'https://www.beatport.com/artist/PLACEHOLDER',
+            youtube: 'https://www.youtube.com/@PLACEHOLDER'
         }
     },
     'fleur-et-beunie': {
         name: 'Fléur et Beunié',
-        image: 'images/fleur-et-beunie.png',
         bio: 'Das französische House-Duo lieferte mit Feu Léger 2025 eine French/House Hymne der extraklasse. Selbst die Remixe überzeugen leichtfüßig.',
+        image: 'images/fleur-et-beunie.png',
         links: {
-            spotify: 'https://open.spotify.com/artist/YOUR_ARTIST_ID',
-            appleMusic: 'https://music.apple.com/artist/YOUR_ARTIST_ID',
-            amazon: 'https://music.amazon.com/artists/YOUR_ARTIST_ID',
-            beatport: 'https://www.beatport.com/artist/YOUR_ARTIST_ID',
-            youtube: 'https://www.youtube.com/@YOUR_CHANNEL'
+            spotify: 'https://open.spotify.com/artist/PLACEHOLDER',
+            appleMusic: 'https://music.apple.com/artist/PLACEHOLDER',
+            amazon: 'https://music.amazon.com/artists/PLACEHOLDER',
+            beatport: 'https://www.beatport.com/artist/PLACEHOLDER',
+            youtube: 'https://www.youtube.com/@PLACEHOLDER'
         }
     },
     'sukram': {
         name: 'SUKRAM',
-        image: 'images/sukram.png',
         bio: 'Der böse Bube mit der großen Klappe liefert mit Deutschland du mein Fiebertraum eine Ansage an das hier und jetzt und nimmt dabei kein Blatt vor den Mund.',
+        image: 'images/sukram.png',
         links: {
-            spotify: 'https://open.spotify.com/artist/YOUR_ARTIST_ID',
-            appleMusic: 'https://music.apple.com/artist/YOUR_ARTIST_ID',
-            amazon: 'https://music.amazon.com/artists/YOUR_ARTIST_ID',
-            beatport: 'https://www.beatport.com/artist/YOUR_ARTIST_ID',
-            youtube: 'https://www.youtube.com/@YOUR_CHANNEL'
+            spotify: 'https://open.spotify.com/artist/PLACEHOLDER',
+            appleMusic: 'https://music.apple.com/artist/PLACEHOLDER',
+            amazon: 'https://music.amazon.com/artists/PLACEHOLDER',
+            beatport: 'https://www.beatport.com/artist/PLACEHOLDER',
+            youtube: 'https://www.youtube.com/@PLACEHOLDER'
         }
     }
 };
 
-// Video Popup Handler
-function initVideoPopup() {
-    const videoPopup = document.getElementById('videoPopup');
-    const isMobile = window.innerWidth < 768;
-    
-    if (!videoPopup.classList.contains('hidden')) {
-        return;
-    }
-
-    // Show popup on page load
-    setTimeout(() => {
-        videoPopup.classList.remove('hidden');
-    }, 500);
-
-    // Click outside to close
-    videoPopup.addEventListener('click', (e) => {
-        if (e.target === videoPopup) {
-            closeVideoPopup();
-        }
-    });
-}
+// ========================================
+// VIDEO MODAL FUNCTIONALITY
+// ========================================
 
 function closeVideoPopup() {
-    document.getElementById('videoPopup').classList.add('hidden');
-    document.getElementById('introVideo').pause();
+    const videoPopup = document.getElementById('videoPopup');
+    if (videoPopup) {
+        videoPopup.classList.add('hidden');
+        const video = document.getElementById('introVideo');
+        if (video) {
+            video.pause();
+        }
+    }
 }
 
 function toggleMute() {
     const video = document.getElementById('introVideo');
     const muteBtn = document.getElementById('muteBtn');
+    
+    if (!video || !muteBtn) return;
     
     if (video.muted) {
         video.muted = false;
@@ -114,15 +104,24 @@ function toggleMute() {
     }
 }
 
-// Artist Modal Handler
+// ========================================
+// ARTIST MODAL FUNCTIONALITY
+// ========================================
+
 function openArtistModal(artistId) {
     const artist = artistsData[artistId];
     if (!artist) return;
 
     const modal = document.getElementById('artistModal');
-    document.getElementById('modalArtistName').textContent = artist.name;
-    document.getElementById('modalArtistImage').src = artist.image;
-    document.getElementById('modalArtistBio').textContent = artist.bio;
+    const nameEl = document.getElementById('modalArtistName');
+    const imageEl = document.getElementById('modalArtistImage');
+    const bioEl = document.getElementById('modalArtistBio');
+
+    if (!modal || !nameEl || !imageEl || !bioEl) return;
+
+    nameEl.textContent = artist.name;
+    imageEl.src = artist.image;
+    bioEl.textContent = artist.bio;
 
     // Update streaming links
     const spotifyBtn = document.querySelector('.streaming-btn.spotify');
@@ -131,50 +130,94 @@ function openArtistModal(artistId) {
     const beatportBtn = document.querySelector('.streaming-btn.beatport');
     const youtubeBtn = document.querySelector('.streaming-btn.youtube');
 
-    spotifyBtn.href = artist.links.spotify;
-    appleMusicBtn.href = artist.links.appleMusic;
-    amazonBtn.href = artist.links.amazon;
-    beatportBtn.href = artist.links.beatport;
-    youtubeBtn.href = artist.links.youtube;
+    if (spotifyBtn) spotifyBtn.href = artist.links.spotify;
+    if (appleMusicBtn) appleMusicBtn.href = artist.links.appleMusic;
+    if (amazonBtn) amazonBtn.href = artist.links.amazon;
+    if (beatportBtn) beatportBtn.href = artist.links.beatport;
+    if (youtubeBtn) youtubeBtn.href = artist.links.youtube;
 
     modal.classList.remove('hidden');
 }
 
 function closeArtistModal() {
-    document.getElementById('artistModal').classList.add('hidden');
+    const modal = document.getElementById('artistModal');
+    if (modal) {
+        modal.classList.add('hidden');
+    }
 }
 
-// Newsletter Handler
+// ========================================
+// NEWSLETTER FUNCTIONALITY
+// ========================================
+
 function handleNewsletterSubmit(event) {
     event.preventDefault();
     
     const form = event.target;
-    const email = form.querySelector('input[type="email"]').value;
-    const checkbox = form.querySelector('input[type="checkbox"]').checked;
+    const emailInput = form.querySelector('input[type="email"]');
+    const checkbox = form.querySelector('input[type="checkbox"]');
 
-    if (!email || !checkbox) {
-        alert('Bitte fülle alle Felder aus');
+    if (!emailInput || !checkbox) return;
+
+    const email = emailInput.value;
+
+    if (!email || !checkbox.checked) {
+        alert('Bitte fülle alle Felder aus!');
         return;
     }
 
-    // Here you would send the email to your backend
-    console.log('Newsletter signup:', { email });
-    alert(`Danke für die Anmeldung mit: ${email}`);
-    
-    // Reset form
+    alert(`Danke für die Anmeldung mit: ${email} 🎵`);
     form.reset();
 }
 
-// Close modal on outside click
+// ========================================
+// INITIALIZATION ON PAGE LOAD
+// ========================================
+
 document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('artistModal');
-    
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeArtistModal();
+    // Video popup
+    const videoPopup = document.getElementById('videoPopup');
+    if (videoPopup) {
+        setTimeout(() => {
+            videoPopup.classList.remove('hidden');
+        }, 500);
+
+        videoPopup.addEventListener('click', (e) => {
+            if (e.target === videoPopup) {
+                closeVideoPopup();
+            }
+        });
+    }
+
+    // Artist modal outside click
+    const artistModal = document.getElementById('artistModal');
+    if (artistModal) {
+        artistModal.addEventListener('click', (e) => {
+            if (e.target === artistModal) {
+                closeArtistModal();
+            }
+        });
+    }
+
+    // ESC key to close modals
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const videoPopup = document.getElementById('videoPopup');
+            const artistModal = document.getElementById('artistModal');
+            
+            if (videoPopup && !videoPopup.classList.contains('hidden')) {
+                closeVideoPopup();
+            }
+            if (artistModal && !artistModal.classList.contains('hidden')) {
+                closeArtistModal();
+            }
         }
     });
-
-    // Initialize video popup
-    initVideoPopup();
 });
+
+// ========================================
+// CONSOLE WELCOME
+// ========================================
+
+console.log('%c🎵 Willkommen zu ROKKO! Records 🎵', 'font-size: 24px; color: #E7760D; font-weight: bold;');
+console.log('%cDas Label für neurodiverse Künstler aus dem Spektrum', 'font-size: 14px; color: #E7760D;');
