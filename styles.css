@@ -1,3 +1,4 @@
+
 :root {
     --black: #000000;
     --orange: #E7760D;
@@ -23,18 +24,6 @@ body {
     overflow-x: hidden;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: var(--black);
-    color: var(--orange);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
 .container {
     max-width: 700px;
     margin: 0 auto;
@@ -43,8 +32,7 @@ body {
 
 /* ===== HEADER ===== */
 .header {
-    width: 100%;
-    margin: 0;
+    margin-bottom: 80px;
     perspective: 1200px;
 }
 
@@ -60,12 +48,8 @@ body {
 .header-image {
     width: 100%;
     display: block;
+    border-radius: 25px;
     object-fit: cover;
-}
-.content-wrapper {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 20px 60px 20px;
 }
 
 /* ===== VIDEO MODAL ===== */
@@ -111,6 +95,10 @@ body {
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .close-popup:hover {
@@ -139,7 +127,8 @@ body {
     transform: scale(1.05);
 }
 
-/* ===== WELCOME SECTION ===== */.welcome-section {
+/* ===== WELCOME SECTION ===== */
+.welcome-section {
     margin-bottom: 100px;
     perspective: 1200px;
 }
@@ -153,9 +142,13 @@ body {
     text-align: center;
     border-radius: 30px;
     margin-bottom: -15px;
+    position: relative;
+    z-index: 2;
     transform: rotate(2.5deg);
+    transform-origin: left center;
     display: inline-block;
     margin-left: 40px;
+    box-shadow: 0 10px 30px rgba(231, 118, 13, 0.3);
 }
 
 .welcome-box {
@@ -164,7 +157,10 @@ body {
     padding: 40px;
     background-color: var(--dark-bg);
     transform: rotate(-1.2deg);
+    transform-origin: right center;
+    margin-top: 20px;
 }
+
 .welcome-box h1 {
     color: var(--orange);
     font-size: 32px;
@@ -194,8 +190,13 @@ body {
     text-align: center;
     border-radius: 30px;
     margin-bottom: -15px;
+    position: relative;
+    z-index: 2;
+    transform: rotate(-2deg);
+    transform-origin: right center;
     display: inline-block;
     margin-left: 60px;
+    box-shadow: 0 10px 30px rgba(231, 118, 13, 0.3);
 }
 
 .projects-grid {
@@ -206,8 +207,12 @@ body {
     background-color: var(--dark-bg);
     border: 2.5pt solid var(--orange);
     border-radius: 30px;
+    border-top: none;
     transform: rotate(0.8deg);
+    transform-origin: left center;
+    margin-top: 20px;
 }
+
 /* Artist Cards - Alternating styles */
 .artist-card {
     position: relative;
@@ -227,21 +232,6 @@ body {
 }
 
 /* Even cards: Orange background with black border */
-.artist-card {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    aspect-ratio: 1;
-}
-
-.artist-card:nth-child(odd) {
-    background-color: var(--black);
-    border: 2.5pt solid var(--orange);
-    border-radius: 15px;
-    transform: rotate(-1.5deg);
-}
-
 .artist-card:nth-child(even) {
     background-color: var(--orange);
     border: 2.5pt solid var(--black);
@@ -250,7 +240,8 @@ body {
 }
 
 .artist-card:hover {
-    transform: scale(1.08);
+    transform: scale(1.08) rotate(var(--rotation, 0deg));
+    box-shadow: 0 15px 40px rgba(231, 118, 13, 0.4);
 }
 
 .artist-card:nth-child(odd):hover {
@@ -300,12 +291,17 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.95);
+    background-color: rgba(0, 0, 0, 0.95);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 999;
+    animation: fadeIn 0.3s ease-in;
     padding: 20px;
+}
+
+.artist-modal.hidden {
+    display: none;
 }
 
 .modal-content {
@@ -315,6 +311,10 @@ body {
     padding: 40px;
     max-width: 900px;
     width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: rotate(-0.5deg);
 }
 
 .modal-close {
@@ -398,14 +398,25 @@ body {
 /* ===== YOUTUBE SECTION ===== */
 .youtube-section {
     margin-bottom: 100px;
+    perspective: 1200px;
+}
+
+.youtube-section .section-banner {
+    transform: rotate(1.8deg);
+    transform-origin: left center;
+    margin-left: 50px;
 }
 
 .youtube-container {
     background-color: var(--dark-bg);
     border: 2.5pt solid var(--orange);
     border-radius: 30px;
+    border-top: none;
     padding: 30px;
+    overflow: hidden;
     transform: rotate(-1.5deg);
+    transform-origin: right center;
+    margin-top: 20px;
 }
 
 .youtube-container iframe {
@@ -421,6 +432,21 @@ body {
     padding: 50px 40px;
     margin-bottom: 100px;
     text-align: center;
+    transform: rotate(1.2deg);
+    transform-origin: center;
+}
+
+.newsletter-section h2 {
+    color: var(--orange);
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.newsletter-section p {
+    color: var(--orange);
+    margin-bottom: 35px;
+    font-size: 16px;
 }
 
 .newsletter-form {
@@ -430,6 +456,7 @@ body {
     max-width: 500px;
     margin: 0 auto;
 }
+
 .newsletter-form input[type="email"] {
     padding: 15px;
     border: 2.5pt solid var(--orange);
@@ -491,6 +518,8 @@ body {
     border-radius: 30px;
     padding: 40px;
     text-align: center;
+    transform: rotate(-1.5deg);
+    transform-origin: left center;
 }
 
 .impressum h3 {
@@ -520,40 +549,43 @@ body {
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
 
-    .content-wrapper {
-        padding: 0 15px 60px 15px;
+    .container {
+        padding: 0;
     }
 
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+    .header {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-bottom: 60px;
     }
 
-    .modal-content {
-        padding: 25px;
+    .header-content {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
     }
-}
 
-@media (max-width: 480px) {
-
-    .content-wrapper {
-        padding: 0 12px 60px 12px;
+    .header-image {
+        width: 100%;
+        border-radius: 0;
     }
 
     .welcome-banner,
     .section-banner {
-        font-size: 22px;
-        margin-left: 15px !important;
+        font-size: 26px;
+        padding: 20px 30px;
     }
-}
 
     .welcome-box,
     .projects-grid {
