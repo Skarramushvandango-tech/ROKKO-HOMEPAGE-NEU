@@ -40,7 +40,7 @@ body {
     position: relative;
     overflow: hidden;
     border: 0;
-    border-radius: 20px;
+    border-radius: 10px;
     background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
     transform-origin: center;
 }
@@ -48,7 +48,7 @@ body {
 .header-image {
     width: 95%;
     display: block;
-    border-radius: 25px;
+    border-radius: 15px;
     object-fit: cover;
 }
 
@@ -140,21 +140,21 @@ body {
     font-size: 36px;
     font-weight: bold;
     text-align: center;
-    border-radius: 30px;
+    border-radius: 10px;
     margin-bottom: -25px;
     position: relative;
     z-index: 2;
-    transform: rotate(2.5deg);
+    transform: rotate(2.8deg);
     transform-origin: left center;
     display: inline-block;
-    margin-left: 40px;
+    margin-left: 50px;
     box-shadow: 0 10px 30px rgba(231, 118, 13, 0.3);
 }
 
 .welcome-box {
     border: 2.5pt solid var(--orange);
     border-radius: 30px;
-    padding: 40px;
+    padding: 30px;
     background-color: var(--dark-bg);
     transform: rotate(-1.2deg);
     transform-origin: right center;
@@ -172,7 +172,7 @@ body {
     color: var(--orange);
     margin-bottom: 20px;
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
 /* ===== PROJECTS SECTION ===== */
