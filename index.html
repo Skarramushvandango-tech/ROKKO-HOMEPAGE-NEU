@@ -3,147 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROKKO! Records - Label</title>
+    <title>ROKKO! Records - Neurodiverse Music Label</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header mit Video-Popup - NO NAVBAR -->
-    <header id="home" class="header">
-        <div class="header-content">
-            <img src="images/header-placeholder.png" alt="ROKKO! Records Header" class="header-image">
-        </div>
-    </header>
-
-    <!-- Video Modal -->
-    <div id="videoModal" class="video-modal hidden">
-        <div class="video-modal-content">
-            <button class="video-close-btn" id="videoClose">&times;</button>
-            <div class="video-container">
-                <video id="introVideo" controls muted autoplay>
-                    <source src="videos/intro-web.mp4" type="video/mp4">
-                    Dein Browser unterstützt HTML5 Videos nicht.
-                </video>
-            </div>
-            <button class="video-mute-btn" id="videoMute">🔇 Ton aus</button>
-        </div>
-    </div>
-
-    <!-- Welcome Section -->
-    <section class="welcome-section">
-        <div class="welcome-header">Willkommen</div>
-        <div class="welcome-box">
-            <h2>Wir sind ROKKO! Records</h2>
-            <p>Unser Herz schlägt im Pott</p>
-            <p>Unsere Ohrmusckel-Propaganda ist grenzenlos</p>
-            <br>
-            <p>Denn ROKKO! hat kein Genre, keine Farbe, keine Schublade. Aber ROKKO! ist neurodiverse und arbeitet nur mit Künstlern aus dem Spektrum zusammen.</p>
-            <br>
-            <p>Da wir Künstler aus dem Spektrum uns oft eher unserm selbstdarstellen, wird bei ROKKO! Das Augenmerk der Ohrmusckel geschenkt.</p>
-        </div>
-    </section>
-
-    <!-- Artists Section -->
-    <section id="artists" class="artists-section">
-        <div class="artists-header">Projekte</div>
-        <div class="artists-container">
-            <div class="artists-grid">
-                <div class="artist-card" data-artist="skaramush-vandango">
-                    <div class="artist-image-wrapper">
-                        <img src="images/skaramush-vandango.png" alt="SkaRamush Vandango" class="artist-image">
-                        <div class="artist-label">SKARAMUSH<br>VANDANGO</div>
-                    </div>
-                </div>
-                <div class="artist-card" data-artist="silberstreif">
-                    <div class="artist-image-wrapper">
-                        <img src="images/silberstreif.png" alt="Silberstreif" class="artist-image">
-                        <div class="artist-label">SILBERSTREIF</div>
-                    </div>
-                </div>
-                <div class="artist-card" data-artist="anger-uschis">
-                    <div class="artist-image-wrapper">
-                        <img src="images/anger-uschis.png" alt="Anger Uschis" class="artist-image">
-                        <div class="artist-label">ANGER USCHIS</div>
-                    </div>
-                </div>
-                <div class="artist-card" data-artist="henri-bellieu">
-                    <div class="artist-image-wrapper">
-                        <img src="images/henri-bellieu.png" alt="Henri Bellieu" class="artist-image">
-                        <div class="artist-label">HENRI BELLIEU</div>
-                    </div>
-                </div>
-                <div class="artist-card" data-artist="fleur-et-beunie">
-                    <div class="artist-image-wrapper">
-                        <img src="images/fleur-et-beunie.png" alt="Fléur et Beunié" class="artist-image">
-                        <div class="artist-label">FLÉUR ET<br>BEUNIÉ</div>
-                    </div>
-                </div>
-                <div class="artist-card" data-artist="sukram">
-                    <div class="artist-image-wrapper">
-                        <img src="images/sukram.png" alt="SUKRAM" class="artist-image">
-                        <div class="artist-label">SUKRAM</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Artist Detail Modal -->
-    <div id="artistModal" class="artist-modal hidden">
-        <div class="artist-modal-content">
-            <button class="artist-close-btn" id="artistClose">&times;</button>
-            <img id="modalArtistImage" src="" alt="" class="modal-artist-image">
-            <div class="artist-info">
-                <h2 id="modalArtistName"></h2>
-                <p id="modalArtistBio"></p>
-                <div class="artist-links">
-                    <a href="#" class="link-btn spotify-btn" target="_blank">Spotify</a>
-                    <a href="#" class="link-btn apple-btn" target="_blank">Apple Music</a>
-                    <a href="#" class="link-btn amazon-btn" target="_blank">Amazon</a>
-                    <a href="#" class="link-btn beatport-btn" target="_blank">Beatport</a>
-                    <a href="#" class="link-btn youtube-btn" target="_blank">YouTube</a>
-                </div>
+    <!-- Video Popup -->
+    <div id="videoPopup" class="video-popup hidden">
+        <div class="video-container">
+            <button class="close-popup" onclick="closeVideoPopup()">×</button>
+            <video id="introVideo" autoplay muted playsinline>
+                <source src="videos/intro-mobile.mp4" type="video/mp4">
+            </video>
+            <div class="video-controls">
+                <button id="muteBtn" class="mute-btn" onclick="toggleMute()">🔇 Unmute</button>
             </div>
         </div>
     </div>
 
-    <!-- YouTube Section -->
-    <section id="youtube" class="youtube-section">
-        <div class="youtube-header">YouTube</div>
-        <div class="youtube-container">
-            <iframe width="100%" height="600" src="https://www.youtube.com/embed/videoseries?list=PLMt6M5G2Twu-VVcXn7j7_7wRnYwLRche-" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </section>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <img src="images/header-banner.png" alt="ROKKO! Records" class="header-image">
+            </div>
+        </header>
 
-    <!-- Newsletter Section -->
-    <section id="newsletter" class="newsletter-section">
-        <div class="newsletter-header">Newsletter</div>
-        <div class="newsletter-box">
-            <h3>Bleib auf dem Laufenden!</h3>
-            <p>Erhalte regelmäßige Updates zu neuen Releases, Events und Neuigkeiten von ROKKO! Records.</p>
-            <form class="newsletter-form" id="newsletterForm">
-                <input type="email" placeholder="Deine Email-Adresse" required>
-                <label>
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="welcome-banner">Willkommen</div>
+            <div class="welcome-box">
+                <h1>Wir sind ROKKO! Records</h1>
+                <p>Unser Herz schlägt im Pott<br>
+                Unsere Ohrmuschel-Propaganda ist grenzenlos</p>
+                <p>Denn ROKKO! hat kein Genre, keine Farbe, keine Schublade. Aber ROKKO! ist neurodiverse und arbeitet nur mit Künstlern aus dem Spektrum zusammen.</p>
+                <p>Da wir Künstler aus dem Spektrum uns oft eher unseren selbstdarstellen, wird bei ROKKO! Das Augenmerk der Ohrmuschel geschenkt.</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section">
+            <div class="section-banner">Projekte</div>
+            <div class="projects-grid">
+                <!-- Artist Cards -->
+                <div class="artist-card" onclick="openArtistModal('skaramush-vandango')">
+                    <img src="images/skaramush-vandango.png" alt="SkaRamush Vandango">
+                    <div class="artist-label">SKARAMUSH VANDANGO</div>
+                </div>
+
+                <div class="artist-card" onclick="openArtistModal('silberstreif')">
+                    <img src="images/silberstreif.png" alt="Silberstreif">
+                    <div class="artist-label">SILBERSTREIF</div>
+                </div>
+
+                <div class="artist-card" onclick="openArtistModal('anger-uschis')">
+                    <img src="images/anger-uschis.png" alt="Anger Uschis">
+                    <div class="artist-label">ANGER USCHIS</div>
+                </div>
+
+                <div class="artist-card" onclick="openArtistModal('henri-bellieu')">
+                    <img src="images/henri-bellieu.png" alt="Henri Bellieu">
+                    <div class="artist-label">HENRI BELLIEU</div>
+                </div>
+
+                <div class="artist-card" onclick="openArtistModal('fleur-et-beunie')">
+                    <img src="images/fleur-et-beunie.png" alt="Fléur et Beunié">
+                    <div class="artist-label">FLÉUR ET BEUNIÉ</div>
+                </div>
+
+                <div class="artist-card rokko-logo" onclick="openArtistModal('sukram')">
+                    <img src="images/sukram.png" alt="SUKRAM">
+                    <div class="artist-label">SUKRAM</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artist Modal -->
+        <div id="artistModal" class="artist-modal hidden">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeArtistModal()">×</button>
+                <div class="modal-body">
+                    <img id="modalArtistImage" src="" alt="Artist" class="modal-artist-image">
+                    <div class="modal-info">
+                        <h2 id="modalArtistName"></h2>
+                        <p id="modalArtistBio"></p>
+                        <div class="streaming-links">
+                            <a href="#" class="streaming-btn spotify" target="_blank">
+                                <span>🎵</span> Spotify
+                            </a>
+                            <a href="#" class="streaming-btn apple-music" target="_blank">
+                                <span>🎶</span> Apple Music
+                            </a>
+                            <a href="#" class="streaming-btn amazon" target="_blank">
+                                <span>🎵</span> Amazon Music
+                            </a>
+                            <a href="#" class="streaming-btn beatport" target="_blank">
+                                <span>🎧</span> Beatport
+                            </a>
+                            <a href="#" class="streaming-btn youtube" target="_blank">
+                                <span>▶</span> YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- YouTube Section -->
+        <section class="youtube-section">
+            <div class="section-banner">YouTube</div>
+            <div class="youtube-container">
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/videoseries?list=PLMt6M5G2Twu-VVcXn7j7_7wRnYwLRche-" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <h2>Newsletter</h2>
+            <p>Bleib immer informiert über aktuelle News von ROKKO! Records</p>
+            <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                <input type="email" placeholder="Deine E-Mail-Adresse" required>
+                <label class="checkbox-label">
                     <input type="checkbox" required>
-                    Ich bin damit einverstanden, dass meine Email-Adresse zur Kontaktaufnahme verwendet wird.
+                    <span>Ich stimme der Verwendung meiner E-Mail-Adresse zu</span>
                 </label>
-                <button type="submit" class="submit-btn">Anmelden</button>
+                <button type="submit" class="submit-btn">Abonnieren</button>
             </form>
-        </div>
-    </section>
+        </section>
 
-    <!-- Impressum Section -->
-    <footer id="impressum" class="footer">
-        <div class="footer-content">
-            <h3>Impressum</h3>
-            <p><strong>ROKKO! Records</strong></p>
-            <p>Markus Ilgner<br>
-            Am Brunnen 3<br>
-            47279 Duisburg<br>
-            Mail: folgt noch</p>
-            <p>&copy; 2026 ROKKO! Records. Alle Rechte vorbehalten.</p>
-        </div>
-    </footer>
+        <!-- Footer / Impressum -->
+        <footer class="footer">
+            <div class="impressum">
+                <h3>Impressum</h3>
+                <p><strong>ROKKO! Records</strong></p>
+                <p>Markus Ilgner<br>
+                Am Brunnen 3<br>
+                47279 Duisburg<br>
+                Mail: <a href="mailto:">folgt noch</a></p>
+            </div>
+        </footer>
+    </div>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
