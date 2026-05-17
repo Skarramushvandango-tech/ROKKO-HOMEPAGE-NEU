@@ -41,7 +41,7 @@ body {
     border: 2.5pt solid var(--orange);
     border-radius: 30px;
     background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-    transform: rotate(-2.5deg);
+    transform:
     transform-origin: center;
 }
 
