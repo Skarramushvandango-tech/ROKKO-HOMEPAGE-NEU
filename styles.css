@@ -1,4 +1,3 @@
-
 :root {
     --black: #000000;
     --orange: #E7760D;
@@ -95,42 +94,15 @@ body {
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
 }
 
 .close-popup:hover {
     transform: scale(1.1);
 }
 
-.video-controls {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.mute-btn {
-    background-color: var(--orange);
-    color: var(--black);
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-.mute-btn:hover {
-    background-color: #ff8c1a;
-    transform: scale(1.05);
-}
-
 /* ===== WELCOME SECTION ===== */
 .welcome-section {
-    margin-bottom: 90%;
-    perspective: 1200px;
+    margin-bottom: 80px;
 }
 
 .welcome-banner {
@@ -145,10 +117,8 @@ body {
     position: relative;
     z-index: 2;
     transform: rotate(2.8deg);
-    transform-origin: left center;
     display: inline-block;
     margin-left: 50px;
-    box-shadow: 0 10px 30px rgba(231, 118, 13, 0.3);
 }
 
 .welcome-box {
@@ -157,22 +127,7 @@ body {
     padding: 30px;
     background-color: var(--dark-bg);
     transform: rotate(-1.2deg);
-    transform-origin: right center;
     margin-top: 20px;
-}
-
-.welcome-box h1 {
-    color: var(--orange);
-    font-size: 32px;
-    margin-bottom: 25px;
-    font-weight: 600;
-}
-
-.welcome-box p {
-    color: var(--orange);
-    margin-bottom: 20px;
-    font-size: 16px;
-    line-height: 1.9;
 }
 
 /* ===== PROJECTS SECTION ===== */
@@ -193,10 +148,8 @@ body {
     position: relative;
     z-index: 2;
     transform: rotate(-2deg);
-    transform-origin: right center;
     display: inline-block;
     margin-left: 60px;
-    box-shadow: 0 10px 30px rgba(231, 118, 13, 0.3);
 }
 
 .projects-grid {
@@ -207,58 +160,43 @@ body {
     background-color: var(--dark-bg);
     border: 2.5pt solid var(--orange);
     border-radius: 30px;
-    border-top: none;
-    transform: rotate(0.8deg);
-    transform-origin: left center;
-    margin-top: 20px;
 }
 
-/* Artist Cards - Alternating styles */
+/* ===== ARTIST CARDS ===== */
 .artist-card {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: all 0.3s ease;
     aspect-ratio: 1;
-    transform-origin: center;
+    transition: all 0.3s ease;
+    border-radius: 0 !important;
 }
 
-/* Odd cards: Black background with orange border */
+/* odd */
 .artist-card:nth-child(odd) {
     background-color: var(--black);
     border: 2.5pt solid var(--orange);
-    border-radius: 15px;
     transform: rotate(-1.5deg);
 }
 
-/* Even cards: Orange background with black border */
+/* even */
 .artist-card:nth-child(even) {
     background-color: var(--orange);
     border: 2.5pt solid var(--black);
-    border-radius: 15px;
     transform: rotate(1.5deg);
 }
 
 .artist-card:hover {
-    transform: scale(1.08) rotate(var(--rotation, 0deg));
-    box-shadow: 0 15px 40px rgba(231, 118, 13, 0.4);
-}
-
-.artist-card:nth-child(odd):hover {
-    --rotation: -1.5deg;
-}
-
-.artist-card:nth-child(even):hover {
-    --rotation: 1.5deg;
+    transform: scale(1.08);
 }
 
 .artist-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
+/* label */
 .artist-label {
     position: absolute;
     bottom: 0;
@@ -269,16 +207,13 @@ body {
     font-size: 12px;
     text-align: center;
     clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
-    padding-top: 30px;
 }
 
-/* Odd cards: label is orange text on black bg */
 .artist-card:nth-child(odd) .artist-label {
     background-color: var(--orange);
     color: var(--black);
 }
 
-/* Even cards: label is black text on orange bg */
 .artist-card:nth-child(even) .artist-label {
     background-color: var(--black);
     color: var(--orange);
@@ -297,7 +232,6 @@ body {
     justify-content: center;
     z-index: 999;
     animation: fadeIn 0.3s ease-in;
-    padding: 20px;
 }
 
 .artist-modal.hidden {
@@ -313,118 +247,26 @@ body {
     width: 100%;
     max-height: 90vh;
     overflow-y: auto;
-    position: relative;
-    transform: rotate(-0.5deg);
 }
 
-.modal-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: var(--orange);
-    color: var(--black);
-    border: none;
-    font-size: 32px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 1001;
-}
-
-.modal-close:hover {
-    transform: rotate(90deg) scale(1.1);
-}
-
-.modal-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.modal-artist-image {
-    width: 100%;
-    border: 2.5pt solid var(--orange);
-    border-radius: 15px;
-    transform: rotate(-0.8deg);
-}
-
-.modal-info h2 {
-    color: var(--orange);
-    font-size: 28px;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-.modal-info p {
-    color: var(--orange);
-    margin-bottom: 25px;
-    font-size: 15px;
-    line-height: 1.7;
-}
-
-.streaming-links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.streaming-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 14px;
-    border: 2.5pt solid var(--orange);
-    border-radius: 8px;
-    color: var(--orange);
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    font-size: 14px;
-    background-color: transparent;
-}
-
-.streaming-btn:hover {
-    background-color: var(--orange);
-    color: var(--black);
-    transform: translateX(5px);
-}
-
-/* ===== YOUTUBE SECTION ===== */
-.youtube-section {
-    margin-bottom: 100px;
-    perspective: 1200px;
-}
-
-.youtube-section .section-banner {
-    transform: rotate(1.8deg);
-    transform-origin: left center;
-    margin-left: 50px;
-}
-
+/* ===== YOUTUBE ===== */
 .youtube-container {
     background-color: var(--dark-bg);
     border: 2.5pt solid var(--orange);
     border-radius: 30px;
-    border-top: none;
     padding: 30px;
-    overflow: hidden;
-    transform: rotate(-1.5deg);
-    transform-origin: right center;
-    margin-top: 20px;
+    overflow: visible;
 }
 
 .youtube-container iframe {
-    border-radius: 10px;
+    width: 100%;
+    height: 420px;
+    transform: translateY(-20px);
     border: 2.5pt solid var(--orange);
+    border-radius: 10px;
 }
 
-/* ===== NEWSLETTER SECTION ===== */
+/* ===== NEWSLETTER ===== */
 .newsletter-section {
     background-color: var(--dark-bg);
     border: 2.5pt solid var(--orange);
@@ -432,39 +274,6 @@ body {
     padding: 50px 40px;
     margin-bottom: 100px;
     text-align: center;
-    transform: rotate(1.2deg);
-    transform-origin: center;
-}
-
-.newsletter-section h2 {
-    color: var(--orange);
-    font-size: 32px;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-.newsletter-section p {
-    color: var(--orange);
-    margin-bottom: 35px;
-    font-size: 16px;
-}
-
-.newsletter-form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.newsletter-form input[type="email"] {
-    padding: 15px;
-    border: 2.5pt solid var(--orange);
-    border-radius: 8px;
-    background-color: var(--black);
-    color: var(--orange);
-    font-size: 16px;
-    transition: all 0.3s ease;
 }
 
 .newsletter-form input[type="email"]:focus {
@@ -473,42 +282,8 @@ body {
     box-shadow: 0 0 10px rgba(231, 118, 13, 0.3);
 }
 
-.newsletter-form input[type="email"]::placeholder {
-    color: var(--brown);
-}
-
-.checkbox-label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: var(--orange);
-    font-size: 14px;
-}
-
 .checkbox-label input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
     accent-color: var(--orange);
-}
-
-.submit-btn {
-    padding: 15px;
-    background-color: var(--orange);
-    color: var(--black);
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.submit-btn:hover {
-    background-color: #ff8c1a;
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(231, 118, 13, 0.4);
 }
 
 /* ===== FOOTER ===== */
@@ -518,182 +293,27 @@ body {
     border-radius: 30px;
     padding: 40px;
     text-align: center;
-    transform: rotate(-1.5deg);
-    transform-origin: left center;
 }
 
-.impressum h3 {
-    color: var(--orange);
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.impressum p {
-    color: var(--orange);
-    margin-bottom: 12px;
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-.impressum a {
-    color: var(--orange);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.impressum a:hover {
-    text-decoration: underline;
-    color: #ff8c1a;
-}
-
-/* ===== ANIMATIONS ===== */
+/* ===== ANIMATION ===== */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-
     .container {
         padding: 0;
-    }
-
-    .header {
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
-        margin-bottom: 60px;
-    }
-
-    .header-content {
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-    }
-
-    .header-image {
-        width: 100%;
-        border-radius: 0;
-    }
-
-    .welcome-banner,
-    .section-banner {
-        font-size: 26px;
-        padding: 20px 30px;
-    }
-
-    .welcome-box,
-    .projects-grid {
-        padding: 25px 15px;
     }
 
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-    }
-
-    .modal-body {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .newsletter-section {
-        padding: 40px 25px;
-    }
-
-    .youtube-container {
-        padding: 15px;
+        padding: 20px;
     }
 
     .youtube-container iframe {
         height: 300px;
-    }
-
-    .footer {
-        padding: 30px 20px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .container {
-        padding: 0;
-    }
-
-    .header {
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
-    }
-
-    .header-content {
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-    }
-
-    .header-image {
-        border-radius: 0;
-    }
-
-    .welcome-banner,
-    .section-banner {
-        font-size: 22px;
-        padding: 18px 20px;
-        margin-left: 15px !important;
-    }
-
-    .welcome-box h1 {
-        font-size: 24px;
-    }
-
-    .projects-grid {
-        padding: 15px 10px;
-        gap: 12px;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .artist-label {
-        font-size: 11px;
-        padding: 8px;
-        padding-top: 25px;
-    }
-
-    .modal-content {
-        padding: 25px;
-        max-height: 85vh;
-    }
-
-    .modal-close {
-        top: 10px;
-        right: 10px;
-        width: 35px;
-        height: 35px;
-        font-size: 28px;
-    }
-
-    .modal-info h2 {
-        font-size: 22px;
-    }
-
-    .modal-artist-image {
-        border-radius: 10px;
-    }
-
-    .streaming-btn {
-        padding: 12px;
-        font-size: 13px;
-    }
-
-    .newsletter-section h2 {
-        font-size: 24px;
-    }
-
-    .newsletter-section p {
-        font-size: 14px;
     }
 }
