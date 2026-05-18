@@ -83,6 +83,11 @@ const artistsData = {
             beatport: 'https://www.beatport.com/artist/PLACEHOLDER',
             youtube: 'https://www.youtube.com/channel/PLACEHOLDER'
         }
+            },
+    'blank Tile': {
+        name: 'ROKKO!',
+        image: 'images/placeholder.png',
+ 
     }
 };
 
