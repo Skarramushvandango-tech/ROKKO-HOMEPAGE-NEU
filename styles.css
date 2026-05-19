@@ -286,3 +286,32 @@ body.modal-open {
         gap: 20px;
     }
 }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+/* keine optischen Verzerrungen mehr */
+.artist-card {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    cursor: pointer;
+    transform: none !important;
+    border: none !important;
+}
+
+/* Bild bleibt clean */
+.artist-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Labels komplett aus – weil Bilder schon Text enthalten */
+.artist-label,
+.merch-tile-label {
+    display: none !important;
+}
