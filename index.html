@@ -10,72 +10,49 @@
 <body>
 
 <!-- INTRO -->
-<div id="intro" class="intro">
+<div id="intro">
     <video id="introVideo" autoplay muted playsinline></video>
 
     <div class="intro-ui">
-        <div class="intro-close">X</div>
-        <div class="intro-unmute">Unmute</div>
+        <div id="closeIntro" class="btn-x">X</div>
+        <div id="muteBtn" class="btn-mute">Unmute</div>
     </div>
 </div>
 
-<header class="header">
-    <img src="images/header.png" alt="ROKKO">
+<header>
+    <img src="images/header.png" alt="">
 </header>
 
-<div class="container">
-
-<!-- WELCOME -->
-<section class="card a">
-    <h1>Willkommen bei ROKKO! Records</h1>
-    <p>Independent Label für elektronische Musik.</p>
-</section>
-
-<!-- ARTISTS -->
-<section class="card b">
-
+<!-- CARD SYSTEM -->
+<section class="section-card frame-orange">
     <div class="artist-grid">
 
-        <img src="images/anger-uschis.png" class="artist">
-        <img src="images/silberstreif.png" class="artist">
+        <img class="artist" src="images/anger-uschis.png" data-name="Anger Uschis" data-bio="Bio 1">
+        <img class="artist" src="images/silberstreif.png" data-name="Silberstreif" data-bio="Bio 2">
 
-        <img src="images/henri-bellieu.png" class="artist">
-        <img src="images/fleur-et-beunie.png" class="artist">
+        <img class="artist" src="images/henri-bellieu.png" data-name="Henri Bellieu" data-bio="Bio 3">
+        <img class="artist" src="images/fleur-et-beunie.png" data-name="Fleur et Beunie" data-bio="Bio 4">
 
-        <img src="images/sukram.png" class="artist">
-        <img src="images/skaramush-vandango.png" class="artist">
+        <img class="artist" src="images/sukram.png" data-name="SUKRAM" data-bio="Bio 5">
+        <img class="artist" src="images/skaramush-vandango.png" data-name="SkaRamush Vandango" data-bio="Bio 6">
 
-        <img src="images/anthony-sinclair.png" class="artist">
+        <img class="artist" src="images/anthony-sinclair.png" data-name="Anthony Sinclair" data-bio="Bio 7">
 
     </div>
-
 </section>
 
-<!-- MERCH -->
-<section class="card a">
+<!-- SHOP -->
+<section>
     <a href="https://rokko-records.myspreadshop.de" target="_blank">
-        <img src="images/merch.png" class="merch">
+        <img src="images/merch.png" alt="">
     </a>
 </section>
 
-<!-- NEWSLETTER -->
-<section class="card b">
-    <input type="email" placeholder="Email">
-    <button>Join</button>
-</section>
-
-<!-- IMPRESSUM -->
-<section class="card a">
-    <p>Impressum</p>
-</section>
-
-</div>
-
 <!-- POPUP -->
-<div id="popup" class="popup hidden">
-    <div class="popup-close">X</div>
-    <h1 id="popupName"></h1>
-    <p id="popupBio"></p>
+<div id="popup" class="hidden">
+    <div id="closePopup">X</div>
+    <h1 id="name"></h1>
+    <p id="bio"></p>
 </div>
 
 <script src="script.js"></script>
