@@ -283,6 +283,13 @@ document.addEventListener('keydown', function (e) {
     if (artistModal && !artistModal.classList.contains('hidden')) closeArtistModal();
     if (merchModal && !merchModal.classList.contains('hidden')) closeMerchModal();
 });
+// ========================================
+// SCROLL REVEAL
+// ========================================
+
+function initScrollReveal() {
+   ... (scroll reveal code)
+}
 
 // ========================================
 // INIT
@@ -290,7 +297,11 @@ document.addEventListener('keydown', function (e) {
 
 document.addEventListener('DOMContentLoaded', function () {
     buildYoutubeGrid();
+    initScrollReveal();
+    ... (youtube observer)
 });
 
-console.log('%c🎵 Willkommen zu ROKKO! Records 🎵', 'font-size: 24px; color: #E7760D; font-weight: bold;');
-console.log('%cDas Label für neurodiverse Künstler aus dem Spektrum', 'font-size: 14px; color: #E7760D;');
+console.log('%c🎵 Willkommen zu ROKKO! Records 🎵', ...);
+console.log('%cDas Label für neurodiverse Künstler...', ...);
+
+
