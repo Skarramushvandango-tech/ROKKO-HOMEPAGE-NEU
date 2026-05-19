@@ -9,75 +9,65 @@
 
 <body>
 
-<!-- HEADER -->
 <header class="header">
-    <img src="images/header.png" alt="ROKKO Header">
+    <img src="images/header.png" alt="ROKKO">
 </header>
 
 <div class="container">
 
 <!-- WELCOME -->
-<section id="welcomeBox">
-    <div class="banner">Welcome</div>
+<section class="box">
+    <div class="banner orange">Welcome</div>
     <h1 id="welcomeTitle"></h1>
     <p id="welcomeText"></p>
 </section>
 
 <!-- ARTISTS -->
 <section>
-    <div class="banner">Artists</div>
+    <div class="banner black">Artists</div>
+
     <div class="grid">
 
-        <div class="card" data-artist="anger-uschis"><img src="images/anger-uschis.png"></div>
-        <div class="card" data-artist="silberstreif"><img src="images/silberstreif.png"></div>
-        <div class="card" data-artist="henri-bellieu"><img src="images/henri-bellieu.png"></div>
-        <div class="card" data-artist="fleur-et-beunie"><img src="images/fleur-et-beunie.png"></div>
-        <div class="card" data-artist="sukram"><img src="images/sukram.png"></div>
-        <div class="card" data-artist="skaramush-vandango"><img src="images/skaramush-vandango.png"></div>
-        <div class="card" data-artist="anthony-sinclair"><img src="images/anthony-sinclair.png"></div>
+        <div class="card dark" data-artist="anger-uschis"><img src="images/anger-uschis.png"></div>
+        <div class="card light" data-artist="silberstreif"><img src="images/silberstreif.png"></div>
+        <div class="card dark" data-artist="henri-bellieu"><img src="images/henri-bellieu.png"></div>
+        <div class="card light" data-artist="fleur-et-beunie"><img src="images/fleur-et-beunie.png"></div>
+        <div class="card dark" data-artist="sukram"><img src="images/sukram.png"></div>
+        <div class="card light" data-artist="skaramush-vandango"><img src="images/skaramush-vandango.png"></div>
+        <div class="card dark" data-artist="anthony-sinclair"><img src="images/anthony-sinclair.png"></div>
 
     </div>
 </section>
 
 <!-- MERCH -->
 <section>
-    <div class="banner">Merch</div>
+    <div class="banner orange">Merch</div>
     <a href="merch.png" target="_blank">
-        <img src="merch.png" style="width:100%; border:2px solid #E7760D;">
+        <img src="merch.png" class="fullimg">
     </a>
 </section>
 
-<!-- YOUTUBE -->
-<section>
-    <div class="banner">Videos</div>
-    <div id="youtubeGrid" class="grid"></div>
-</section>
-
 <!-- NEWSLETTER -->
-<section id="newsletterBox">
-    <div class="banner">Newsletter</div>
-    <form>
-        <input type="email" placeholder="Email">
-        <button type="submit">Join</button>
-    </form>
+<section>
+    <div class="banner black">Newsletter</div>
+    <input type="email" placeholder="Email">
+    <button>Join</button>
 </section>
 
 <!-- IMPRESSUM -->
 <footer>
-    <div class="banner">Impressum</div>
+    <div class="banner orange">Impressum</div>
     <p>ROKKO! Records ©</p>
 </footer>
 
 </div>
 
 <!-- MODAL -->
-<div id="artistModal" class="artist-modal hidden">
+<div id="artistModal" class="modal hidden">
     <div class="modal-content">
         <button onclick="closeArtistModal()">X</button>
-        <img id="modalArtistImage">
         <h2 id="modalArtistName"></h2>
         <p id="modalArtistBio"></p>
-        <div id="modalStreamingLinks"></div>
     </div>
 </div>
 
