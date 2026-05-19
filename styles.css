@@ -1,137 +1,102 @@
-@font-face {
-    font-family: LifeSavers;
-    src: url('fonts/LifeSavers-Regular.ttf');
-}
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body {
-    background: #000;
-    color: #E7760D;
-    font-family: LifeSavers, sans-serif;
-    min-height: 100vh;
+    background:#000;
+    color:#E7760D;
+    font-family:Arial;
 }
 
 .container {
-    width: 85%;
-    margin: auto;
+    max-width:85%;
+    margin:auto;
 }
 
 /* HEADER */
 .header img {
-    width: 100%;
-    border-radius: 12px;
+    width:100%;
+    border-radius:12px;
 }
 
-/* SECTION TITLE */
-.section-banner {
-    background: #E7760D;
-    color: #000;
-    padding: 12px 20px;
-    font-weight: bold;
-    border-radius: 12px;
-    transform: rotate(4deg);
-    display: inline-block;
-    margin: 25px 0 10px;
+/* BANNERS */
+.banner {
+    display:inline-block;
+    background:#E7760D;
+    color:#000;
+    padding:10px 18px;
+    border-radius:12px;
+    font-weight:bold;
+    margin:20px 0;
+    transform: rotate(-4deg);
+    position:relative;
+    z-index:1;
 }
 
 /* GRID */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    background: #0a0a0a;
-    padding: 15px;
-    border: 2px solid #E7760D;
-    border-radius: 18px;
+.grid {
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:12px;
+    background:#0a0a0a;
+    padding:15px;
+    border:2px solid #E7760D;
+    border-radius:18px;
 }
 
-/* ARTIST */
-.artist-card {
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    cursor: pointer;
+/* CARDS */
+.card {
+    aspect-ratio:1/1;
+    overflow:hidden;
+    cursor:pointer;
 }
 
-.artist-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.card img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-/* MERCH */
-.merch-link img {
-    width: 100%;
-    border-radius: 12px;
-    margin-top: 10px;
+/* WELCOME */
+#welcomeBox {
+    background:#0a0a0a;
+    border:2px solid #E7760D;
+    padding:20px;
+    border-radius:18px;
 }
 
-/* MODAL */
+#welcomeTitle {
+    font-size:28px;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+/* MODAL FULLSCREEN FIX */
 .artist-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.95);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.95);
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .artist-modal.hidden {
-    display: none;
+    display:none;
 }
 
 .modal-content {
-    width: 90%;
-    max-width: 800px;
-    background: #0a0a0a;
-    border: 2px solid #E7760D;
-    padding: 20px;
+    background:#0a0a0a;
+    padding:20px;
+    width:90%;
+    max-width:600px;
+    border:2px solid #E7760D;
+    max-height:90vh;
+    overflow:auto;
 }
 
-/* VIDEO FULLSCREEN */
-.video-popup {
-    position: fixed;
-    inset: 0;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.video-popup.hidden {
-    display: none;
-}
-
-.video-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* BUTTONS */
-.close-popup {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: #E7760D;
-    border: none;
-    font-size: 28px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-}
-
-.mute-btn {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #E7760D;
-    border-radius: 20px;
-    padding: 8px 14px;
-    border: none;
+.modal-content h2 {
+    font-size:24px;
 }
