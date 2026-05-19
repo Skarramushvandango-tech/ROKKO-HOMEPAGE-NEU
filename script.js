@@ -1,44 +1,92 @@
-const artists = {
-  "anger-uschis": { name:"Anger Uschis", bio:"Politisches Debüt gegen Hass und Hetze." },
-  "silberstreif": { name:"Silberstreif", bio:"Sommerhit Sound." },
-  "henri-bellieu": { name:"Henri Bellieu", bio:"French Pop." },
-  "fleur-et-beunie": { name:"Fléur et Beunié", bio:"House Music." },
-  "sukram": { name:"SUKRAM", bio:"Direkte Ansage." },
-  "skaramush-vandango": { name:"SkaRamush Vandango", bio:"Labelchef & Producer." },
-  "anthony-sinclair": { name:"Anthony Sinclair", bio:"80s Synth Wave." }
-};
+document.addEventListener("DOMContentLoaded", () => {
 
-/* ARTIST POPUP */
-document.querySelectorAll(".artist").forEach(img => {
-  img.addEventListener("click", () => {
+    /* ======================
+       CACHE
+    ====================== */
 
-    const key = img.src.split("/").pop().replace(".png","");
-    const a = artists[key];
+    const intro = document.getElementById("intro");
+    const video = document.getElementById("introVideo");
+    const closeIntroBtn = document.getElementById("closeIntro");
+    const muteBtn = document.getElementById("muteBtn");
 
-    if(!a) return;
+    const popup = document.getElementById("popup");
+    const nameEl = document.getElementById("name");
+    const bioEl = document.getElementById("bio");
+    const closePopupBtn = document.getElementById("closePopup");
 
-    document.getElementById("popupName").textContent = a.name;
-    document.getElementById("popupBio").textContent = a.bio;
+    let introActive = true;
 
-    document.getElementById("popup").classList.remove("hidden");
-  });
+    /* ======================
+       INTRO LOGIC
+    ====================== */
+
+    if (video) {
+        video.muted = true;
+
+        video.src = window.innerWidth < 768
+            ? "videos/intro-mobile.mp4"
+            : "videos/intro-web.mp4";
+
+        video.load();
+    }
+
+    if (closeIntroBtn && intro) {
+        closeIntroBtn.addEventListener("click", () => {
+            introActive = false;
+            intro.remove();
+        });
+    }
+
+    if (muteBtn && video) {
+        muteBtn.addEventListener("click", () => {
+            if (!introActive) return;
+
+            video.muted = !video.muted;
+            muteBtn.textContent = video.muted ? "Unmute" : "Mute";
+        });
+    }
+
+    /* ======================
+       POPUP LOGIC
+    ====================== */
+
+    function openPopup(name, bio) {
+        if (!popup || !nameEl || !bioEl) return;
+
+        nameEl.textContent = name || "";
+        bioEl.textContent = bio || "";
+
+        popup.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closePopup() {
+        if (!popup) return;
+
+        popup.classList.add("hidden");
+        document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll(".artist").forEach(el => {
+        el.addEventListener("click", () => {
+            openPopup(el.dataset.name, el.dataset.bio);
+        });
+    });
+
+    if (closePopupBtn) closePopupBtn.addEventListener("click", closePopup);
+
+    if (popup) {
+        popup.addEventListener("click", (e) => {
+            if (e.target === popup) closePopup();
+        });
+    }
+
+    /* ======================
+       SAFETY RESET
+    ====================== */
+
+    window.addEventListener("beforeunload", () => {
+        document.body.style.overflow = "";
+    });
+
 });
-
-/* CLOSE POPUP */
-document.querySelector(".popup-close").addEventListener("click", () => {
-  document.getElementById("popup").classList.add("hidden");
-});
-
-/* INTRO VIDEO LOGIC */
-const intro = document.getElementById("intro");
-const video = document.getElementById("introVideo");
-
-const isMobile = window.innerWidth < 768;
-
-video.src = isMobile
-  ? "videos/intro-mobile.mp4"
-  : "videos/intro-web.mp4";
-
-document.querySelector(".intro-close").onclick = () => {
-  intro.classList.add("hidden");
-};
