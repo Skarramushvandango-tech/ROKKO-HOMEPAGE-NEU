@@ -57,7 +57,6 @@ const iconOrder = [
 
 /* GRID */
 function renderGrid() {
-
     const grid = document.getElementById("artistGrid");
     grid.innerHTML = "";
 
@@ -77,11 +76,8 @@ function renderGrid() {
     }
 }
 
-renderGrid();
-
 /* POPUP */
 function openPopup(id) {
-
     const a = artists.find(x => x.id === id);
     if (!a) return;
 
@@ -120,16 +116,19 @@ function closePopup() {
 
 document.getElementById("closePopup").onclick = closePopup;
 
-document.getElementById("popup").onclick = e => {
-    if (e.target.id === "popup") closePopup();
-};
-
 /* INTRO */
 const video = document.getElementById("introVideo");
 
 video.src = window.innerWidth < 768
     ? "videos/intro-mobile.mp4"
     : "videos/intro-web.mp4";
+
+window.addEventListener("load", () => {
+    video.play().catch(() => {
+        video.muted = true;
+        video.play();
+    });
+});
 
 video.onended = () => {
     document.getElementById("intro").style.display = "none";
@@ -142,3 +141,5 @@ document.getElementById("closeIntro").onclick = () => {
 document.getElementById("muteBtn").onclick = () => {
     video.muted = !video.muted;
 };
+
+document.addEventListener("DOMContentLoaded", renderGrid);
