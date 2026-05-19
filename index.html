@@ -17,66 +17,63 @@
 
 <!-- WELCOME -->
 <section>
-    <div class="banner-wrapper">
-        <div class="banner-back orange"></div>
-        <div class="banner-front black">
+    <div class="card-wrapper black">
+        <div class="card-inner">
             <h1>Willkommen bei ROKKO! Records</h1>
             <p>Independent Label für elektronische Musik.</p>
         </div>
     </div>
 </section>
 
-<!-- ARTISTS -->
-<section>
-    <div class="banner-wrapper">
-        <div class="banner-back black"></div>
-        <div class="banner-front orange">
-            <h2>Artists</h2>
-        </div>
-    </div>
+<!-- ARTIST CARDS SYSTEM -->
+<section id="artistSystem">
 
-    <div class="banner-wrapper">
-        <div class="banner-back black"></div>
-        <div class="banner-front orange">
+    <!-- CARD 1 -->
+    <div class="card-wrapper black">
 
-            <div class="artist-grid">
+        <div class="artist-grid">
 
-                <div class="artist-card" data-artist="anger-uschis"><img src="images/anger-uschis.png"></div>
-                <div class="artist-card" data-artist="silberstreif"><img src="images/silberstreif.png"></div>
-                <div class="artist-card" data-artist="henri-bellieu"><img src="images/henri-bellieu.png"></div>
-                <div class="artist-card" data-artist="fleur-et-beunie"><img src="images/fleur-et-beunie.png"></div>
-                <div class="artist-card" data-artist="sukram"><img src="images/sukram.png"></div>
-                <div class="artist-card" data-artist="skaramush-vandango"><img src="images/skaramush-vandango.png"></div>
-                <div class="artist-card" data-artist="anthony-sinclair"><img src="images/anthony-sinclair.png"></div>
+            <div class="artist" data-id="anger-uschis"><img src="images/anger-uschis.png"></div>
+            <div class="artist" data-id="silberstreif"><img src="images/silberstreif.png"></div>
 
-            </div>
+            <div class="artist" data-id="henri-bellieu"><img src="images/henri-bellieu.png"></div>
+            <div class="artist" data-id="fleur-et-beunie"><img src="images/fleur-et-beunie.png"></div>
 
         </div>
     </div>
+
+    <!-- CARD 2 -->
+    <div class="card-wrapper orange">
+
+        <div class="artist-grid">
+
+            <div class="artist" data-id="sukram"><img src="images/sukram.png"></div>
+            <div class="artist" data-id="skaramush-vandango"><img src="images/skaramush-vandango.png"></div>
+
+            <div class="artist" data-id="anthony-sinclair"><img src="images/anthony-sinclair.png"></div>
+
+        </div>
+    </div>
+
 </section>
 
 <!-- MERCH -->
 <section>
-    <div class="banner-wrapper">
-        <div class="banner-back orange"></div>
-        <div class="banner-front black">
-            <h2>Merch</h2>
-        </div>
+    <div class="card-wrapper black">
+        <h2>Merch</h2>
+        <a href="https://rokko-records.myspreadshop.de" target="_blank">
+            <img src="images/merch.png">
+        </a>
     </div>
-
-    <a href="https://rokko-records.myspreadshop.de" target="_blank" rel="noopener noreferrer">
-        <img src="images/merch.png" class="fullimg">
-    </a>
 </section>
 
 </div>
 
-<!-- MODAL -->
-<div id="artistModal" class="modal hidden">
-    <div class="modal-content">
-        <button onclick="closeArtistModal()">X</button>
-        <h2 id="modalArtistName"></h2>
-        <p id="modalArtistBio"></p>
+<!-- FULLSCREEN POPUP -->
+<div id="popup" class="popup hidden">
+    <div class="popup-content">
+        <h1 id="popupName"></h1>
+        <p id="popupBio"></p>
     </div>
 </div>
 
