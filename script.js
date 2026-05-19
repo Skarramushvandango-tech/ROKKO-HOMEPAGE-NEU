@@ -1,59 +1,55 @@
 const artists = {
-    "skaramush-vandango":{
-        name:"SkaRamush Vandango",
-        bio:"DJ / Producer",
-        image:"images/skaramush-vandango.png",
-        links:{
-            soundcloud:"https://on.soundcloud.com/Ro413zcJKImIS42aKp",
-            instagram:"https://instagram.com/skaramush_vandango",
-            tiktok:"https://tiktok.com/@skaramush_vandango"
-        }
+    "anger-uschis": {
+        name:"Anger Uschis",
+        bio:"Mit ihrem Debütalbum liefern sie ein politisches Mahnmal gegen Hass und Hetze."
     },
-    "silberstreif":{
+    "silberstreif": {
         name:"Silberstreif",
-        bio:"",
-        image:"images/silberstreif.png",
-        links:{}
+        bio:"Sommerhit Soundtrack für süßen Schmerz."
+    },
+    "henri-bellieu": {
+        name:"Henri Bellieu",
+        bio:"Französischer Pop mit Charme."
+    },
+    "fleur-et-beunie": {
+        name:"Fléur et Beunié",
+        bio:"French House Extraklasse."
+    },
+    "sukram": {
+        name:"SUKRAM",
+        bio:"Gegenwart in Klangform."
+    },
+    "skaramush-vandango": {
+        name:"SkaRamush Vandango",
+        bio:"Labelchef und NeuroCentric Projekt."
+    },
+    "anthony-sinclair": {
+        name:"Anthony Sinclair",
+        bio:"80s Synth Atmosphäre."
     }
 };
 
-const platforms = [
-    ["soundcloud","SoundCloud"],
-    ["instagram","Instagram"],
-    ["tiktok","TikTok"]
-];
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("welcomeTitle").textContent =
+        "Willkommen bei ROKKO! Records";
 
-function openArtist(id){
-    const a = artists[id];
-    if(!a) return;
+    document.getElementById("welcomeText").textContent =
+        "Independent Label für elektronische Musik.";
 
-    document.getElementById("artistModal").classList.remove("hidden");
-    document.getElementById("modalArtistImage").src = a.image;
-    document.getElementById("modalArtistName").textContent = a.name;
-    document.getElementById("modalArtistBio").textContent = a.bio;
+    document.querySelectorAll(".card").forEach(c => {
+        c.addEventListener("click", () => {
+            const a = artists[c.dataset.artist];
+            if (!a) return;
 
-    const box = document.getElementById("modalStreamingLinks");
-    box.innerHTML = "";
-
-    platforms.forEach(([k,label])=>{
-        if(!a.links?.[k]) return;
-        const el = document.createElement("a");
-        el.href = a.links[k];
-        el.target = "_blank";
-        el.textContent = label;
-        box.appendChild(el);
+            document.getElementById("artistModal").classList.remove("hidden");
+            document.getElementById("modalArtistName").textContent = a.name;
+            document.getElementById("modalArtistBio").textContent = a.bio;
+        });
     });
-}
+});
 
-function closeArtistModal(){
+function closeArtistModal() {
     document.getElementById("artistModal").classList.add("hidden");
 }
 
-function closeVideoPopup(){
-    document.getElementById("videoPopup").classList.add("hidden");
-}
-
-function toggleMute(){
-    const v = document.getElementById("introVideo");
-    v.muted = !v.muted;
-}
+window.closeArtistModal = closeArtistModal;
