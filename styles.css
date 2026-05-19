@@ -18,7 +18,7 @@ html {
 body {
     background-color: var(--black);
     color: var(--orange);
-    font-family: 'Life Savers', cursive;
+    font-family: 'LifeSavers', cursive;
     line-height: 1.6;
     overflow-x: hidden;
 }
