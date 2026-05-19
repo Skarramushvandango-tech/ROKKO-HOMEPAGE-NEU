@@ -1,4 +1,7 @@
-// Artist Data mit Beschreibungen
+// ========================================
+// ARTIST DATA
+// ========================================
+
 const artistsData = {
     'skaramush-vandango': {
         name: 'SkaRamush Vandango',
@@ -72,6 +75,18 @@ const artistsData = {
             youtube: 'https://www.youtube.com/channel/PLACEHOLDER'
         }
     },
+    'skank-schablonski': {
+        name: 'Skank Schablonski',
+        bio: '',
+        image: 'images/skank-schablonski.png',
+        links: {
+            spotify: 'https://open.spotify.com/artist/PLACEHOLDER',
+            apple: 'https://music.apple.com/artist/PLACEHOLDER',
+            amazon: 'https://www.amazon.com/music/artist/PLACEHOLDER',
+            beatport: 'https://www.beatport.com/artist/PLACEHOLDER',
+            youtube: 'https://www.youtube.com/channel/PLACEHOLDER'
+        }
+    },
     'anthony-sinclair': {
         name: 'Anthony Sinclair',
         bio: 'Eine Zeitreise zurück in die Synthesizer regierenden, achtziger Jahre. Neonfarbener Herzschmerz mit eklektischer Warhol Attitüde.',
@@ -83,136 +98,199 @@ const artistsData = {
             beatport: 'https://www.beatport.com/artist/PLACEHOLDER',
             youtube: 'https://www.youtube.com/channel/PLACEHOLDER'
         }
-            },
-    'blank Tile': {
-        name: 'ROKKO!',
-        image: 'images/placeholder.png',
- 
     }
 };
 
 // ========================================
-// VIDEO MODAL FUNCTIONALITY
+// YOUTUBE VIDEOS
+// Replace PLACEHOLDER with your actual YouTube video IDs
+// e.g. 'dQw4w9WgXcQ' from https://www.youtube.com/watch?v=dQw4w9WgXcQ
 // ========================================
 
-const videoModal = document.getElementById('videoModal');
-const videoClose = document.getElementById('videoClose');
+const youtubeVideos = [
+    { id: 'PLACEHOLDER', title: 'Video 1' },
+    { id: 'PLACEHOLDER', title: 'Video 2' },
+    { id: 'PLACEHOLDER', title: 'Video 3' },
+    { id: 'PLACEHOLDER', title: 'Video 4' }
+];
+
+// ========================================
+// VIDEO POPUP FUNCTIONALITY
+// ========================================
+
+const videoPopup = document.getElementById('videoPopup');
 const introVideo = document.getElementById('introVideo');
-const videoMute = document.getElementById('videoMute');
+const muteBtn = document.getElementById('muteBtn');
 
-// Video schließen
-videoClose.addEventListener('click', () => {
-    videoModal.classList.add('hidden');
-    introVideo.pause();
-    introVideo.currentTime = 0;
-});
-
-// Video Modal mit ESC schließen
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
-        videoClose.click();
+function closeVideoPopup() {
+    videoPopup.classList.add('hidden');
+    if (introVideo) {
+        introVideo.pause();
+        introVideo.currentTime = 0;
     }
-});
+}
 
-// Mute Toggle
-videoMute.addEventListener('click', () => {
+function toggleMute() {
+    if (!introVideo) return;
     if (introVideo.muted) {
         introVideo.muted = false;
-        videoMute.textContent = '🔊 Ton an';
+        muteBtn.textContent = '🔊 Ton an';
     } else {
         introVideo.muted = true;
-        videoMute.textContent = '🔇 Ton aus';
+        muteBtn.textContent = '🔇 Ton aus';
     }
-});
+}
+
+if (videoPopup) {
+    videoPopup.addEventListener('click', function (e) {
+        if (e.target === this) closeVideoPopup();
+    });
+}
 
 // ========================================
 // ARTIST MODAL FUNCTIONALITY
 // ========================================
 
-const artistCards = document.querySelectorAll('.artist-card');
 const artistModal = document.getElementById('artistModal');
-const artistClose = document.getElementById('artistClose');
 const modalArtistImage = document.getElementById('modalArtistImage');
 const modalArtistName = document.getElementById('modalArtistName');
 const modalArtistBio = document.getElementById('modalArtistBio');
-const artistLinkButtons = {
-    spotify: document.querySelector('.spotify-btn'),
-    apple: document.querySelector('.apple-btn'),
-    amazon: document.querySelector('.amazon-btn'),
-    beatport: document.querySelector('.beatport-btn'),
-    youtube: document.querySelector('.youtube-btn')
-};
+const modalStreamingLinks = document.getElementById('modalStreamingLinks');
 
-// Artist Card Click
-artistCards.forEach(card => {
-    card.addEventListener('click', () => {
-        const artistKey = card.dataset.artist;
-        const artist = artistsData[artistKey];
-        
-        if (artist) {
-            // Bild und Text aktualisieren
-            modalArtistImage.src = artist.image;
-            modalArtistName.textContent = artist.name;
-            modalArtistBio.textContent = artist.bio;
-            
-            // Links aktualisieren
-            artistLinkButtons.spotify.href = artist.links.spotify;
-            artistLinkButtons.apple.href = artist.links.apple;
-            artistLinkButtons.amazon.href = artist.links.amazon;
-            artistLinkButtons.beatport.href = artist.links.beatport;
-            artistLinkButtons.youtube.href = artist.links.youtube;
-            
-            // Modal öffnen
-            artistModal.classList.remove('hidden');
-        }
-    });
-});
+const streamingPlatforms = [
+    { key: 'spotify',  label: 'Spotify',      className: 'spotify-btn'  },
+    { key: 'apple',    label: 'Apple Music',   className: 'apple-btn'    },
+    { key: 'amazon',   label: 'Amazon Music',  className: 'amazon-btn'   },
+    { key: 'beatport', label: 'Beatport',      className: 'beatport-btn' },
+    { key: 'youtube',  label: 'YouTube',       className: 'youtube-btn'  }
+];
 
-// Artist Modal schließen
-artistClose.addEventListener('click', () => {
-    artistModal.classList.add('hidden');
-});
+function openArtistModal(artistKey) {
+    const artist = artistsData[artistKey];
+    if (!artist) return;
 
-// Artist Modal mit ESC schließen
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !artistModal.classList.contains('hidden')) {
-        artistClose.click();
+    modalArtistImage.src = artist.image;
+    modalArtistName.textContent = artist.name;
+    modalArtistBio.textContent = artist.bio || '';
+
+    // Build buttons dynamically — only show links that are not placeholders
+    modalStreamingLinks.innerHTML = '';
+    if (artist.links) {
+        streamingPlatforms.forEach(function (platform) {
+            const url = artist.links[platform.key];
+            if (url && !url.includes('PLACEHOLDER')) {
+                const btn = document.createElement('a');
+                btn.href = url;
+                btn.target = '_blank';
+                btn.rel = 'noopener noreferrer';
+                btn.className = 'streaming-btn ' + platform.className;
+                btn.textContent = platform.label;
+                modalStreamingLinks.appendChild(btn);
+            }
+        });
     }
-});
+
+    artistModal.classList.remove('hidden');
+}
+
+function closeArtistModal() {
+    artistModal.classList.add('hidden');
+}
+
+if (artistModal) {
+    artistModal.addEventListener('click', function (e) {
+        if (e.target === this) closeArtistModal();
+    });
+}
 
 // ========================================
-// NEWSLETTER FUNCTIONALITY
+// MERCH MODAL FUNCTIONALITY
 // ========================================
 
-const newsletterForm = document.getElementById('newsletterForm');
+const merchModal = document.getElementById('merchModal');
 
-newsletterForm.addEventListener('submit', (e) => {
+function openMerchModal() {
+    if (merchModal) merchModal.classList.remove('hidden');
+}
+
+function closeMerchModal() {
+    if (merchModal) merchModal.classList.add('hidden');
+}
+
+if (merchModal) {
+    merchModal.addEventListener('click', function (e) {
+        if (e.target === this) closeMerchModal();
+    });
+}
+
+// ========================================
+// YOUTUBE GRID
+// ========================================
+
+function buildYoutubeGrid() {
+    const grid = document.getElementById('youtubeGrid');
+    if (!grid) return;
+
+    grid.innerHTML = '';
+
+    youtubeVideos.forEach(function (video) {
+        if (!video.id || video.id === 'PLACEHOLDER') return;
+
+        const item = document.createElement('div');
+        item.className = 'youtube-item';
+
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + video.id;
+        iframe.title = video.title;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+
+        item.appendChild(iframe);
+        grid.appendChild(item);
+    });
+}
+
+// ========================================
+// NEWSLETTER
+// ========================================
+
+function handleNewsletterSubmit(e) {
     e.preventDefault();
-    
-    const emailInput = newsletterForm.querySelector('input[type="email"]');
-    const checkbox = newsletterForm.querySelector('input[type="checkbox"]');
-    
-    // Validierung
+    const form = e.target;
+    const emailInput = form.querySelector('input[type="email"]');
+    const checkbox = form.querySelector('input[type="checkbox"]');
+
     if (!emailInput.value) {
         alert('Bitte gib deine E-Mail-Adresse ein!');
         return;
     }
-    
     if (!checkbox.checked) {
         alert('Bitte akzeptiere die Datenschutzerklärung!');
         return;
     }
-    
-    // Erfolgreich
-    alert(`Danke! ${emailInput.value} wurde zum Newsletter hinzugefügt. 🎵`);
-    
-    // Formular reset
-    newsletterForm.reset();
+
+    alert('Danke! ' + emailInput.value + ' wurde zum Newsletter hinzugefügt. 🎵');
+    form.reset();
+}
+
+// ========================================
+// ESC KEY — closes any open modal
+// ========================================
+
+document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    if (videoPopup && !videoPopup.classList.contains('hidden')) closeVideoPopup();
+    if (artistModal && !artistModal.classList.contains('hidden')) closeArtistModal();
+    if (merchModal && !merchModal.classList.contains('hidden')) closeMerchModal();
 });
 
 // ========================================
-// CONSOLE WELCOME MESSAGE
+// INIT
 // ========================================
+
+document.addEventListener('DOMContentLoaded', function () {
+    buildYoutubeGrid();
+});
 
 console.log('%c🎵 Willkommen zu ROKKO! Records 🎵', 'font-size: 24px; color: #E7760D; font-weight: bold;');
 console.log('%cDas Label für neurodiverse Künstler aus dem Spektrum', 'font-size: 14px; color: #E7760D;');
