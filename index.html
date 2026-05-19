@@ -1,220 +1,61 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    >
-
-    <title>ROKKO! Records</title>
-
-    <meta
-        name="description"
-        content="ROKKO! Records Official Homepage"
-    >
-
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROKKO! Records</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- INTRO OVERLAY -->
-    <div id="intro" class="intro-overlay" aria-hidden="false">
+<!-- HEADER -->
+<header class="header">
+    <img src="images/header.png">
+</header>
 
-        <div class="intro-video-wrapper">
+<!-- INTRO -->
+<div id="intro">
+    <video id="introVideo" autoplay muted playsinline preload="auto"></video>
 
-            <video
-                id="introVideo"
-                class="intro-video"
-                autoplay
-                muted
-                playsinline
-                preload="auto"
-                webkit-playsinline
-            >
-                <!-- SOURCE WIRD IN script.js GESETZT -->
-            </video>
-
-        </div>
-
-        <div class="intro-ui">
-
-            <button
-                id="closeIntro"
-                class="btn-x"
-                type="button"
-                aria-label="Intro schließen"
-            >
-                ✕
-            </button>
-
-            <button
-                id="muteBtn"
-                class="btn-pill"
-                type="button"
-                aria-label="Ton umschalten"
-            >
-                Sound On
-            </button>
-
-        </div>
-
+    <div class="intro-ui">
+        <div id="closeIntro" class="btn-x">✕</div>
+        <div id="muteBtn" class="btn-mute">Mute</div>
     </div>
+</div>
 
-    <!-- PAGE WRAPPER -->
-    <div class="page-wrapper">
+<!-- ARTISTS -->
+<section class="artist-grid" id="artistGrid"></section>
 
-        <!-- HEADER -->
-        <header class="header">
+<!-- SHOP -->
+<section class="shop">
+    <a href="https://rokko-records.myspreadshop.de/" target="_blank" rel="noopener noreferrer">
+        <img src="images/shop.png">
+    </a>
+</section>
 
-            <img
-                src="images/header.png"
-                alt="ROKKO! Records"
-                class="header-image"
-                draggable="false"
-                loading="eager"
-            >
+<!-- NEWSLETTER -->
+<section class="newsletter">
+    <h2>Newsletter</h2>
+    <input type="email" placeholder="Email">
+    <label>
+        <input type="checkbox">
+        DSGVO akzeptieren
+    </label>
+    <button>Submit</button>
+</section>
 
-        </header>
+<!-- POPUP -->
+<div id="popup" class="popup hidden">
+    <div id="closePopup" class="popup-close">✕</div>
 
-        <!-- ARTISTS -->
-        <main>
+    <img id="popupImage">
+    <h1 id="popupName"></h1>
+    <p id="popupBio"></p>
 
-            <section
-                class="artist-grid"
-                id="artistGrid"
-                aria-label="Artists"
-            >
-            </section>
+    <div id="popupIcons" class="icon-grid"></div>
+</div>
 
-        </main>
-
-        <!-- SHOP -->
-        <section class="shop">
-
-            <a
-                href="https://shop.example.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Zum Shop"
-            >
-
-                <img
-                    src="images/shop.png"
-                    alt="ROKKO! Shop"
-                    class="shop-image"
-                    draggable="false"
-                    loading="lazy"
-                >
-
-            </a>
-
-        </section>
-
-        <!-- NEWSLETTER -->
-        <section class="newsletter">
-
-            <h2>Newsletter</h2>
-
-            <form
-                id="newsletterForm"
-                class="newsletter-form"
-                novalidate
-            >
-
-                <input
-                    id="newsletterEmail"
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    autocomplete="email"
-                    required
-                >
-
-                <label
-                    for="newsletterConsent"
-                    class="newsletter-checkbox"
-                >
-
-                    <input
-                        id="newsletterConsent"
-                        type="checkbox"
-                        required
-                    >
-
-                    <span>DSGVO akzeptieren</span>
-
-                </label>
-
-                <button
-                    type="submit"
-                    class="newsletter-submit"
-                >
-                    Submit
-                </button>
-
-            </form>
-
-        </section>
-
-    </div>
-
-    <!-- ARTIST POPUP -->
-    <div
-        id="popup"
-        class="popup hidden"
-        aria-hidden="true"
-        role="dialog"
-    >
-
-        <div class="popup-inner">
-
-            <button
-                id="closePopup"
-                class="popup-close"
-                type="button"
-                aria-label="Popup schließen"
-            >
-                ✕
-            </button>
-
-            <div class="popup-top">
-
-                <img
-                    id="popupImage"
-                    class="popup-image"
-                    src=""
-                    alt=""
-                    draggable="false"
-                >
-
-                <div class="popup-headline">
-
-                    <h1 id="popupName"></h1>
-
-                </div>
-
-            </div>
-
-            <div class="popup-content">
-
-                <p id="popupBio"></p>
-
-                <div
-                    id="popupIcons"
-                    class="icon-grid"
-                >
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
