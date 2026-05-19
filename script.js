@@ -1,44 +1,39 @@
 const artists = {
     "anger-uschis": {
         name:"Anger Uschis",
-        bio:"Mit ihrem Debütalbum liefern sie ein politisches Mahnmal gegen Hass und Hetze."
+        bio:"Politisches Debütalbum gegen Hass und Hetze."
     },
     "silberstreif": {
         name:"Silberstreif",
-        bio:"Sommerhit Soundtrack für süßen Schmerz."
+        bio:"Sommerhit mit emotionalem Sound."
     },
     "henri-bellieu": {
         name:"Henri Bellieu",
-        bio:"Französischer Pop mit Charme."
+        bio:"Französischer Pop mit Stil."
     },
     "fleur-et-beunie": {
         name:"Fléur et Beunié",
-        bio:"French House Extraklasse."
+        bio:"French House Projekt."
     },
     "sukram": {
         name:"SUKRAM",
-        bio:"Gegenwart in Klangform."
+        bio:"Elektronischer Kommentar zur Gegenwart."
     },
     "skaramush-vandango": {
         name:"SkaRamush Vandango",
-        bio:"Labelchef und NeuroCentric Projekt."
+        bio:"Labelchef und Producer."
     },
     "anthony-sinclair": {
         name:"Anthony Sinclair",
-        bio:"80s Synth Atmosphäre."
+        bio:"80s Synth Ästhetik."
     }
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("welcomeTitle").textContent =
-        "Willkommen bei ROKKO! Records";
 
-    document.getElementById("welcomeText").textContent =
-        "Independent Label für elektronische Musik.";
-
-    document.querySelectorAll(".card").forEach(c => {
-        c.addEventListener("click", () => {
-            const a = artists[c.dataset.artist];
+    document.querySelectorAll(".card-wrapper").forEach(el => {
+        el.addEventListener("click", () => {
+            const a = artists[el.dataset.artist];
             if (!a) return;
 
             document.getElementById("artistModal").classList.remove("hidden");
@@ -46,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("modalArtistBio").textContent = a.bio;
         });
     });
+
 });
 
 function closeArtistModal() {
