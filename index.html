@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <!-- Video Popup -->
     <div id="videoPopup" class="video-popup hidden">
         <div class="video-container">
@@ -22,8 +23,43 @@
         </div>
     </div>
 
+    <!-- ROKKO! MERCH Popup Modal -->
+    <div id="merchModal" class="merch-modal hidden">
+        <div class="merch-modal-content">
+            <button class="merch-modal-close" onclick="closeMerchModal()">×</button>
+            <div id="myShop">
+                <a href="https://rokko-records.myspreadshop.de">rokko-records</a>
+            </div>
+            <script>
+                var spread_shop_config = {
+                    shopName: 'rokko-records',
+                    locale: 'de_DE',
+                    prefix: 'https://rokko-records.myspreadshop.de',
+                    baseId: 'myShop'
+                };
+            </script>
+            <script type="text/javascript" src="https://rokko-records.myspreadshop.de/shopfiles/shopclient/shopclient.nocache.js"></script>
+        </div>
+    </div>
+
+    <!-- Artist Modal -->
+    <div id="artistModal" class="artist-modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeArtistModal()">×</button>
+            <div class="modal-body">
+                <img id="modalArtistImage" src="" alt="Artist" class="modal-artist-image">
+                <div class="modal-info">
+                    <h2 id="modalArtistName"></h2>
+                    <p id="modalArtistBio"></p>
+                    <div class="streaming-links" id="modalStreamingLinks"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
-        <!-- Header (flush top, not rotated) -->
+
+        <!-- Header -->
         <header class="header">
             <div class="header-content">
                 <img src="images/header.png" alt="ROKKO! Records" class="header-image">
@@ -42,87 +78,53 @@
             </div>
         </section>
 
-        <!-- Projects Section: stacks of two cards per artist -->
+        <!-- Projects Section -->
         <section class="projects-section">
             <div class="section-banner">Projekte</div>
             <div class="projects-grid">
-                <!-- Each artist-stack contains bottom + top card. Top is clickable. Images contain any text overlays - no HTML text here. -->
 
-                <div class="artist-stack">
-                    <div class="artist-card " data-artist="skaramush-vandango">
-                        <img src="images/skaramush-vandango.png" alt="SkaRamush Vandango">
-                    </div>
+                <div class="artist-card" onclick="openArtistModal('skaramush-vandango')" data-artist="skaramush-vandango">
+                    <img src="images/skaramush-vandango.png" alt="SkaRamush Vandango">
+                </div>
 
-                <div class="artist-stack">
-                    <div class="artist-card " data-artist="silberstreif">
-                        <img src="images/silberstreif.png" alt="Silberstreif">
-                    </div>
+                <div class="artist-card" onclick="openArtistModal('silberstreif')" data-artist="silberstreif">
+                    <img src="images/silberstreif.png" alt="Silberstreif">
+                </div>
 
-                <div class="artist-stack">
-                    <div class="artist-card " data-artist="anger-uschis">
-                        <img src="images/anger-uschis.png" alt="Anger Uschis">
-                    </div>
-                    
-                <div class="artist-stack">
-                    <div class="artist-card " data-artist="henri-bellieu">
-                        <img src="images/henri-bellieu.png" alt="Henri Bellieu">
-                    </div> 
-                    
-                <div class="artist-stack">
-                    <div class="artist-card " data-artist="fleur-et-beunie">
-                        <img src="images/fleur-et-beunie.png" alt="Fleur et Beunie">
-                    </div>
-                <div class="artist-stack">
-                    <div class="artist-card " data-artist="sukram">
-                        <img src="images/sukram.png" alt="Sukram">
-                    </div>
+                <div class="artist-card" onclick="openArtistModal('anger-uschis')" data-artist="anger-uschis">
+                    <img src="images/anger-uschis.png" alt="Anger Uschis">
+                </div>
 
-                <div class="artist-stack">
-                    <div class="artist-card " data-artist="skank-schablonski">
-                        <img src="images/skank-schablonski.png" alt="Skank Schablonski">
-                    </div>
+                <div class="artist-card" onclick="openArtistModal('henri-bellieu')" data-artist="henri-bellieu">
+                    <img src="images/henri-bellieu.png" alt="Henri Bellieu">
+                </div>
 
-                    <div class="artist-card top" onclick="openArtistModal('anthony-sinclair')" data-artist="anthony-sinclair">
-                        <img src="images/anthony-sinclair.png" alt="Anthony Sinclair">
-                    </div>
-                </div> 
+                <div class="artist-card" onclick="openArtistModal('fleur-et-beunie')" data-artist="fleur-et-beunie">
+                    <img src="images/fleur-et-beunie.png" alt="Fleur et Beunie">
+                </div>
 
-               <div class="artist-stack">
-                    <div class="artist-card " ('ROKKO!')" data-artist="ROKKO! Tile">
-                        <img src="images/placeholder.png" alt="blank tile">
-                    </div> 
+                <div class="artist-card" onclick="openArtistModal('sukram')" data-artist="sukram">
+                    <img src="images/sukram.png" alt="Sukram">
+                </div>
 
-                <!-- Merchandise stack (acts like other stacks) -->
-                <div class="artist-stack merch-stack">
-                    <div class="artist-card" data-artist="merch">
-                        <img src="images/rokko-logo.png" alt="Merchandise">
-                    </div>
-                    <div class="artist-card"
-                        <img src="images/rokko-logo.png" alt="Merchandise">
-                    </div>
+                <div class="artist-card" onclick="openArtistModal('skank-schablonski')" data-artist="skank-schablonski">
+                    <img src="images/skank-schablonski.png" alt="Skank Schablonski">
+                </div>
+
+                <div class="artist-card" onclick="openArtistModal('anthony-sinclair')" data-artist="anthony-sinclair">
+                    <img src="images/anthony-sinclair.png" alt="Anthony Sinclair">
+                </div>
+
+                <!-- ROKKO! MERCH tile — opens the merch popup -->
+                <div class="artist-card merch-tile" onclick="openMerchModal()">
+                    <img src="images/rokko-logo.png" alt="ROKKO! Merch">
+                    <div class="merch-tile-label">ROKKO! MERCH</div>
                 </div>
 
             </div>
         </section>
 
-        <!-- Artist Modal (full screen) -->
-        <div id="artistModal" class="artist-modal hidden">
-            <div class="modal-content">
-                <button class="modal-close" onclick="closeArtistModal()">×</button>
-                <div class="modal-body">
-                    <img id="modalArtistImage" src="" alt="Artist" class="modal-artist-image">
-                    <div class="modal-info">
-                        <h2 id="modalArtistName"></h2>
-                        <p id="modalArtistBio"></p>
-                        <div class="streaming-links" id="modalStreamingLinks">
-                            <!-- Buttons injected by JS (only for links that exist) -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- YouTube Section -> thumbnails grid -->
+        <!-- YouTube Section -->
         <section class="youtube-section">
             <div class="section-banner">YouTube</div>
             <div class="youtube-container">
@@ -130,23 +132,6 @@
                     <!-- thumbnails inserted by JS -->
                 </div>
             </div>
-        </section>
-
-        <!-- Merchandise full section inserted before newsletter for mobile full-screen embed -->
-        <section class="merch-section" id="merchSection">
-            <!-- Spreadshop will be embedded here when requested -->
-            <div id="myShop">
-                <a href="https://rokko-records.myspreadshop.de">rokko-records</a>
-            </div>
-            <script>
-                var spread_shop_config = {
-                    shopName: 'rokko-records',
-                    locale: 'de_DE',
-                    prefix: 'https://rokko-records.myspreadshop.de',
-                    baseId: 'myShop'
-                };
-            </script>
-            <script type="text/javascript" src="https://rokko-records.myspreadshop.de/shopfiles/shopclient/shopclient.nocache.js"></script>
         </section>
 
         <!-- Newsletter Section -->
@@ -174,8 +159,20 @@
                 Mail: <a href="mailto:">folgt noch</a></p>
             </div>
         </footer>
+
     </div>
 
     <script src="js/script.js"></script>
+    <script>
+        function openMerchModal() {
+            document.getElementById('merchModal').classList.remove('hidden');
+        }
+        function closeMerchModal() {
+            document.getElementById('merchModal').classList.add('hidden');
+        }
+        document.getElementById('merchModal').addEventListener('click', function(e) {
+            if (e.target === this) closeMerchModal();
+        });
+    </script>
 </body>
 </html>
