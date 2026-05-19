@@ -11,18 +11,34 @@
 
 <!-- HEADER -->
 <header class="header">
-    <img src="images/header.png">
+    <img src="images/header.png" alt="ROKKO! Records Header">
 </header>
 
 <!-- INTRO -->
 <div id="intro">
-    <video id="introVideo" autoplay muted playsinline preload="auto"></video>
+
+    <video id="introVideo" autoplay muted playsinline preload="auto">
+        <source src="videos/intro-web.mp4" type="video/mp4">
+    </video>
 
     <div class="intro-ui">
         <div id="closeIntro" class="btn-x">✕</div>
         <div id="muteBtn" class="btn-mute">Mute</div>
     </div>
+
 </div>
+
+<!-- HERO / WELCOME -->
+<section class="hero">
+    <div class="hero-card">
+        <h1>Willkommen bei ROKKO! Records</h1>
+        <h2>Ein Label für neurodiverse Künstler aus dem Spektrum</h2>
+        <p>
+            ROKKO! Records ist ein unabhängiges Label mit Fokus auf authentische,
+            ungefilterte künstlerische Ausdrucksformen und individuelle kreative Profile.
+        </p>
+    </div>
+</section>
 
 <!-- ARTISTS -->
 <section class="artist-grid" id="artistGrid"></section>
@@ -30,7 +46,7 @@
 <!-- SHOP -->
 <section class="shop">
     <a href="https://rokko-records.myspreadshop.de/" target="_blank" rel="noopener noreferrer">
-        <img src="images/shop.png">
+        <img src="images/shop.png" alt="Shop">
     </a>
 </section>
 
@@ -49,7 +65,7 @@
 <div id="popup" class="popup hidden">
     <div id="closePopup" class="popup-close">✕</div>
 
-    <img id="popupImage">
+    <img id="popupImage" alt="Artist Image">
     <h1 id="popupName"></h1>
     <p id="popupBio"></p>
 
