@@ -1,103 +1,86 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROKKO! Records</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROKKO! Records</title>
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<!-- VIDEO POPUP -->
-<div id="videoPopup" class="video-popup hidden">
-    <button class="close-popup" onclick="closeVideoPopup()">×</button>
-
-    <div class="video-container">
-        <video id="introVideo" autoplay muted playsinline>
-            <source src="videos/intro-web.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <button id="muteBtn" class="mute-btn" onclick="toggleMute()">🔇 Unmute</button>
-</div>
-
-<!-- ARTIST MODAL -->
-<div id="artistModal" class="artist-modal hidden">
-    <div class="modal-content">
-        <button class="close-popup" onclick="closeArtistModal()">×</button>
-        <img id="modalArtistImage" class="modal-artist-image">
-        <h2 id="modalArtistName"></h2>
-        <p id="modalArtistBio"></p>
-        <div id="modalStreamingLinks" class="streaming-links"></div>
-    </div>
-</div>
+<!-- HEADER -->
+<header class="header">
+    <img src="images/header.png" alt="ROKKO Header">
+</header>
 
 <div class="container">
 
-    <header class="header">
-        <img src="images/header.png">
-    </header>
+<!-- WELCOME -->
+<section id="welcomeBox">
+    <div class="banner">Welcome</div>
+    <h1 id="welcomeTitle"></h1>
+    <p id="welcomeText"></p>
+</section>
 
-    <!-- WELCOME -->
-    <section>
-        <div class="section-banner">WELCOME</div>
-        <div class="welcome-box">
-            Wir sind ROKKO! Records
-        </div>
-    </section>
+<!-- ARTISTS -->
+<section>
+    <div class="banner">Artists</div>
+    <div class="grid">
 
-    <!-- ARTISTS -->
-    <section>
-        <div class="section-banner">PROJECTS</div>
+        <div class="card" data-artist="anger-uschis"><img src="images/anger-uschis.png"></div>
+        <div class="card" data-artist="silberstreif"><img src="images/silberstreif.png"></div>
+        <div class="card" data-artist="henri-bellieu"><img src="images/henri-bellieu.png"></div>
+        <div class="card" data-artist="fleur-et-beunie"><img src="images/fleur-et-beunie.png"></div>
+        <div class="card" data-artist="sukram"><img src="images/sukram.png"></div>
+        <div class="card" data-artist="skaramush-vandango"><img src="images/skaramush-vandango.png"></div>
+        <div class="card" data-artist="anthony-sinclair"><img src="images/anthony-sinclair.png"></div>
 
-        <div class="projects-grid">
+    </div>
+</section>
 
-            <div class="artist-card" onclick="openArtistModal('skaramush-vandango')">
-                <img src="images/skaramush-vandango.png">
-            </div>
+<!-- MERCH -->
+<section>
+    <div class="banner">Merch</div>
+    <a href="merch.png" target="_blank">
+        <img src="merch.png" style="width:100%; border:2px solid #E7760D;">
+    </a>
+</section>
 
-            <div class="artist-card" onclick="openArtistModal('silberstreif')">
-                <img src="images/silberstreif.png">
-            </div>
+<!-- YOUTUBE -->
+<section>
+    <div class="banner">Videos</div>
+    <div id="youtubeGrid" class="grid"></div>
+</section>
 
-            <div class="artist-card" onclick="openArtistModal('anger-uschis')">
-                <img src="images/anger-uschis.png">
-            </div>
+<!-- NEWSLETTER -->
+<section id="newsletterBox">
+    <div class="banner">Newsletter</div>
+    <form>
+        <input type="email" placeholder="Email">
+        <button type="submit">Join</button>
+    </form>
+</section>
 
-            <div class="artist-card" onclick="openArtistModal('henri-bellieu')">
-                <img src="images/henri-bellieu.png">
-            </div>
-
-            <div class="artist-card" onclick="openArtistModal('fleur-et-beunie')">
-                <img src="images/fleur-et-beunie.png">
-            </div>
-
-            <div class="artist-card" onclick="openArtistModal('sukram')">
-                <img src="images/sukram.png">
-            </div>
-
-            <div class="artist-card" onclick="openArtistModal('skank-schablonski')">
-                <img src="images/skank-schablonski.png">
-            </div>
-
-            <div class="artist-card" onclick="openArtistModal('anthony-sinclair')">
-                <img src="images/anthony-sinclair.png">
-            </div>
-
-        </div>
-    </section>
-
-    <!-- MERCH -->
-    <section>
-        <div class="section-banner">MERCH</div>
-
-        <a class="merch-link" href="https://rokko-records.myspreadshop.de" target="_blank">
-            <img src="images/merch.png">
-        </a>
-    </section>
+<!-- IMPRESSUM -->
+<footer>
+    <div class="banner">Impressum</div>
+    <p>ROKKO! Records ©</p>
+</footer>
 
 </div>
 
-<script src="js/script.js"></script>
+<!-- MODAL -->
+<div id="artistModal" class="artist-modal hidden">
+    <div class="modal-content">
+        <button onclick="closeArtistModal()">X</button>
+        <img id="modalArtistImage">
+        <h2 id="modalArtistName"></h2>
+        <p id="modalArtistBio"></p>
+        <div id="modalStreamingLinks"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
