@@ -8,13 +8,12 @@
 </head>
 <body>
 
-    <!-- Video Popup -->
+    <!-- VIDEO POPUP -->
     <div id="videoPopup" class="video-popup hidden">
         <div class="video-container">
-            <button id="videoClose" class="close-popup" onclick="closeVideoPopup()">×</button>
+            <button class="close-popup" onclick="closeVideoPopup()">×</button>
             <video id="introVideo" autoplay muted playsinline>
                 <source src="videos/intro-web.mp4" media="(min-width: 768px)" type="video/mp4">
-                <source src="videos/intro-mobile.mp4" media="(max-width: 767px)" type="video/mp4">
                 <source src="videos/intro-mobile.mp4" type="video/mp4">
             </video>
             <div class="video-controls">
@@ -23,119 +22,112 @@
         </div>
     </div>
 
-    <!-- ROKKO! MERCH Popup Modal -->
-    <div id="merchModal" class="merch-modal hidden">
-        <div class="merch-modal-content">
-            <button class="merch-modal-close" onclick="closeMerchModal()">×</button>
-            <div id="myShop">
-                <a href="https://rokko-records.myspreadshop.de">rokko-records</a>
-            </div>
-            <script>
-                var spread_shop_config = {
-                    shopName: 'rokko-records',
-                    locale: 'de_DE',
-                    prefix: 'https://rokko-records.myspreadshop.de',
-                    baseId: 'myShop'
-                };
-            </script>
-            <script type="text/javascript" src="https://rokko-records.myspreadshop.de/shopfiles/shopclient/shopclient.nocache.js"></script>
-        </div>
-    </div>
-
-    <!-- Artist Modal -->
+    <!-- ARTIST MODAL -->
     <div id="artistModal" class="artist-modal hidden">
         <div class="modal-content">
             <button class="modal-close" onclick="closeArtistModal()">×</button>
-            <div class="modal-body">
-                <img id="modalArtistImage" src="" alt="Artist" class="modal-artist-image">
-                <div class="modal-info">
-                    <h2 id="modalArtistName"></h2>
-                    <p id="modalArtistBio"></p>
-                    <div class="streaming-links" id="modalStreamingLinks"></div>
-                </div>
+            <img id="modalArtistImage" src="" alt="Artist" class="modal-artist-image">
+            <div class="modal-info">
+                <h2 id="modalArtistName"></h2>
+                <p id="modalArtistBio"></p>
+                <div class="streaming-links" id="modalStreamingLinks"></div>
             </div>
         </div>
     </div>
 
     <div class="container">
 
-        <!-- Header -->
+        <!-- HEADER -->
         <header class="header">
             <div class="header-content">
                 <img src="images/header.png" alt="ROKKO! Records" class="header-image">
             </div>
         </header>
 
-        <!-- Welcome Section -->
-        <section class="welcome-section">
+        <!-- WELCOME -->
+        <section class="welcome-section reveal">
             <div class="welcome-banner">Willkommen</div>
             <div class="welcome-box">
                 <h1>Wir sind ROKKO! Records</h1>
-                <p>Unser Herz schlägt im Pott<br>
-                Unsere Ohrmuschel-Propaganda ist grenzenlos</p>
+                <p>Unser Herz schlägt im Pott<br>Unsere Ohrmuschel-Propaganda ist grenzenlos</p>
                 <p>Denn ROKKO! hat kein Genre, keine Farbe, keine Schublade. Aber ROKKO! ist neurodiverse und arbeitet nur mit Künstlern aus dem Spektrum zusammen.</p>
                 <p>Da wir Künstler aus dem Spektrum uns oft eher unseren selbstdarstellen, wird bei ROKKO! Das Augenmerk der Ohrmuschel geschenkt.</p>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section class="projects-section">
+        <!-- PROJEKTE / ARTIST GRID -->
+        <section class="projects-section reveal">
             <div class="section-banner">Projekte</div>
             <div class="projects-grid">
-
-                <div class="artist-card" onclick="openArtistModal('skaramush-vandango')" data-artist="skaramush-vandango">
+                <div class="artist-card reveal-card reveal-delay-1" onclick="openArtistModal('skaramush-vandango')">
                     <img src="images/skaramush-vandango.png" alt="SkaRamush Vandango">
+                    <div class="artist-label">SKARAMUSH VANDANGO</div>
                 </div>
-
-                <div class="artist-card" onclick="openArtistModal('silberstreif')" data-artist="silberstreif">
+                <div class="artist-card reveal-card reveal-delay-2" onclick="openArtistModal('silberstreif')">
                     <img src="images/silberstreif.png" alt="Silberstreif">
+                    <div class="artist-label">SILBERSTREIF</div>
                 </div>
-
-                <div class="artist-card" onclick="openArtistModal('anger-uschis')" data-artist="anger-uschis">
+                <div class="artist-card reveal-card reveal-delay-3" onclick="openArtistModal('anger-uschis')">
                     <img src="images/anger-uschis.png" alt="Anger Uschis">
+                    <div class="artist-label">ANGER USCHIS</div>
                 </div>
-
-                <div class="artist-card" onclick="openArtistModal('henri-bellieu')" data-artist="henri-bellieu">
+                <div class="artist-card reveal-card reveal-delay-4" onclick="openArtistModal('henri-bellieu')">
                     <img src="images/henri-bellieu.png" alt="Henri Bellieu">
+                    <div class="artist-label">HENRI BELLIEU</div>
                 </div>
-
-                <div class="artist-card" onclick="openArtistModal('fleur-et-beunie')" data-artist="fleur-et-beunie">
+                <div class="artist-card reveal-card reveal-delay-5" onclick="openArtistModal('fleur-et-beunie')">
                     <img src="images/fleur-et-beunie.png" alt="Fleur et Beunie">
+                    <div class="artist-label">FLEUR ET BEUNIE</div>
                 </div>
-
-                <div class="artist-card" onclick="openArtistModal('sukram')" data-artist="sukram">
+                <div class="artist-card reveal-card reveal-delay-6" onclick="openArtistModal('sukram')">
                     <img src="images/sukram.png" alt="Sukram">
+                    <div class="artist-label">SUKRAM</div>
                 </div>
-
-                <div class="artist-card" onclick="openArtistModal('skank-schablonski')" data-artist="skank-schablonski">
+                <div class="artist-card reveal-card reveal-delay-7" onclick="openArtistModal('skank-schablonski')">
                     <img src="images/skank-schablonski.png" alt="Skank Schablonski">
+                    <div class="artist-label">SKANK SCHABLONSKI</div>
                 </div>
-
-                <div class="artist-card" onclick="openArtistModal('anthony-sinclair')" data-artist="anthony-sinclair">
+                <div class="artist-card reveal-card reveal-delay-8" onclick="openArtistModal('anthony-sinclair')">
                     <img src="images/anthony-sinclair.png" alt="Anthony Sinclair">
+                    <div class="artist-label">ANTHONY SINCLAIR</div>
                 </div>
-
-                <!-- ROKKO! MERCH tile — opens the merch popup -->
-                <div class="artist-card merch-tile" onclick="openMerchModal()">
+                <div class="artist-card merch-tile reveal-card reveal-delay-9" onclick="toggleMerchShop()">
                     <img src="images/rokko-logo.png" alt="ROKKO! Merch">
                     <div class="merch-tile-label">ROKKO! MERCH</div>
                 </div>
-
             </div>
         </section>
 
-        <!-- YouTube Section -->
-        <section class="youtube-section">
+        <!-- MERCH SHOP -->
+        <section class="merch-section" id="merchSection">
+            <div class="section-banner">ROKKO! MERCH</div>
+            <div class="merch-box">
+                <button class="merch-close-btn" onclick="closeMerchShop()">Shop schließen ×</button>
+                <div id="myShop">
+                    <a href="https://rokko-records.myspreadshop.de">rokko-records</a>
+                </div>
+                <script>
+                    var spread_shop_config = {
+                        shopName: 'rokko-records',
+                        locale: 'de_DE',
+                        prefix: 'https://rokko-records.myspreadshop.de',
+                        baseId: 'myShop'
+                    };
+                </script>
+                <script type="text/javascript" src="https://rokko-records.myspreadshop.de/shopfiles/shopclient/shopclient.nocache.js"></script>
+            </div>
+        </section>
+
+        <!-- YOUTUBE -->
+        <section class="youtube-section reveal">
             <div class="section-banner">YouTube</div>
             <div class="youtube-container">
-                <div class="youtube-grid" id="youtubeGrid">
-                    <!-- thumbnails inserted by JS -->
-                </div>
+                <div class="youtube-grid" id="youtubeGrid"></div>
             </div>
         </section>
 
-        <!-- Newsletter Section -->
-        <section class="newsletter-section">
+        <!-- NEWSLETTER -->
+        <section class="newsletter-section reveal">
             <h2>Newsletter</h2>
             <p>Bleib immer informiert über aktuelle News von ROKKO! Records</p>
             <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
@@ -144,35 +136,20 @@
                     <input type="checkbox" required>
                     <span>Ich stimme der Verwendung meiner E-Mail-Adresse zu</span>
                 </label>
-                <button type="submit" class="submit-btn">Abonnieren</button>
+                <button type="submit">Abonnieren</button>
             </form>
         </section>
 
-        <!-- Footer / Impressum -->
-        <footer class="footer">
-            <div class="impressum">
-                <h3>Impressum</h3>
-                <p><strong>ROKKO! Records</strong></p>
-                <p>Markus Ilgner<br>
-                Am Brunnen 3<br>
-                47279 Duisburg<br>
-                Mail: <a href="mailto:">folgt noch</a></p>
-            </div>
+        <!-- FOOTER -->
+        <footer class="footer reveal">
+            <h3>Impressum</h3>
+            <p><strong>ROKKO! Records</strong></p>
+            <p>Markus Ilgner<br>Am Brunnen 3<br>47279 Duisburg<br>
+            Mail: <a href="mailto:">folgt noch</a></p>
         </footer>
 
     </div>
 
     <script src="js/script.js"></script>
-    <script>
-        function openMerchModal() {
-            document.getElementById('merchModal').classList.remove('hidden');
-        }
-        function closeMerchModal() {
-            document.getElementById('merchModal').classList.add('hidden');
-        }
-        document.getElementById('merchModal').addEventListener('click', function(e) {
-            if (e.target === this) closeMerchModal();
-        });
-    </script>
 </body>
 </html>
