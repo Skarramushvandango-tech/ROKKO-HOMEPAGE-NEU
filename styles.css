@@ -22,15 +22,82 @@
     --brown: #53483E;
 }
 
-body {
-    margin: 0;
-    background: var(--bg);
-    overflow-x: hidden;
-    font-family: "LifeSavers";
-    color: white;
+/* =========================
+   GLOBAL BASE RULES
+========================= */
+
+* {
+    box-sizing: border-box;
 }
 
-/* HEADER */
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    font-family: "LifeSavers";
+    color: white;
+    overflow-x: hidden;
+}
+
+/* HARD LOCK STATE (USED BY JS) */
+body.locked {
+    overflow: hidden !important;
+    height: 100vh;
+}
+
+/* =========================
+   INTRO STATE (FULL BLOCK)
+========================= */
+
+#intro {
+    position: fixed;
+    inset: 0;
+    background: var(--card);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#introVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+}
+
+.intro-ui {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.btn-x {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--orange);
+    font-size: 28px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.btn-mute {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--orange);
+    padding: 10px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+/* =========================
+   HEADER (RESPONSIVE RULE)
+========================= */
+
 .header {
     text-align: center;
     padding: 20px;
@@ -43,39 +110,32 @@ body {
     margin: 0 auto;
 }
 
-/* INTRO */
-#intro {
-    position: fixed;
-    inset: 0;
+/* =========================
+   HERO (STRICT VISUAL BLOCK)
+========================= */
+
+.hero {
+    margin: 14px;
+    padding: 20px;
     background: var(--card);
-    z-index: 9999;
+    border: 5px solid var(--orange);
 }
 
-#introVideo {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    font-weight: 800;
 }
 
-.btn-x {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: var(--orange);
-    font-size: 28px;
+.hero p {
+    margin: 6px 0;
+    opacity: 0.9;
 }
 
-.btn-mute {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--orange);
-    padding: 10px 16px;
-    border-radius: 999px;
-}
+/* =========================
+   ARTIST GRID (STATE SAFE)
+========================= */
 
-/* GRID */
 .artist-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -85,8 +145,11 @@ body {
 
 .artist {
     width: 100%;
+    display: block;
     border: 5px solid var(--orange);
     transform: rotate(-4deg);
+    transition: transform 0.2s ease;
+    backface-visibility: hidden;
 }
 
 .artist:nth-child(2n) {
@@ -94,7 +157,7 @@ body {
 }
 
 .artist:hover {
-    transform: rotate(0deg) scale(1.04);
+    transform: rotate(0deg) scale(1.03);
 }
 
 .placeholder {
@@ -102,36 +165,116 @@ body {
     pointer-events: none;
 }
 
-/* SHOP */
+/* =========================
+   SHOP BLOCK
+========================= */
+
+.shop {
+    margin: 14px;
+}
+
+.shop a {
+    display: block;
+    border: 5px solid var(--orange);
+}
+
 .shop img {
     width: 100%;
     display: block;
 }
 
-/* NEWSLETTER */
+/* =========================
+   NEWSLETTER BLOCK
+========================= */
+
 .newsletter {
+    margin: 14px;
+    padding: 20px;
     background: var(--card);
-    padding: 40px 14px;
+    border: 5px solid var(--orange);
 }
 
-/* POPUP */
+.newsletter input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.newsletter button {
+    margin-top: 10px;
+    padding: 10px 16px;
+    background: var(--orange);
+    border: none;
+    cursor: pointer;
+}
+
+/* =========================
+   POPUP (HARD OVERLAY STATE)
+========================= */
+
 .popup {
     position: fixed;
     inset: 0;
     background: var(--card);
-    z-index: 9999;
+    z-index: 99999;
+    padding: 20px;
+    overflow: hidden;
 }
 
 .hidden {
     display: none;
 }
 
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--orange);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.popup-content {
+    margin-top: 40px;
+}
+
+.popup-image {
+    width: 80px;
+    height: 80px;
+    border: 5px solid var(--orange);
+    object-fit: cover;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#popupName {
+    margin: 10px 0;
+}
+
+#popupBio {
+    opacity: 0.9;
+}
+
+/* =========================
+   ICON SYSTEM
+========================= */
+
 .icon-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+    margin-top: 20px;
 }
 
 .icon-grid img {
     width: 28px;
+    height: 28px;
+}
+
+/* =========================
+   FINAL SAFETY
+========================= */
+
+html, body {
+    overflow-x: hidden;
 }
