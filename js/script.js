@@ -1,55 +1,51 @@
 const artistsData = {
-    'skaramush-vandango': {
-        name: 'SkaRamush Vandango',
-        bio: 'DJ / Producer / Label',
-        image: 'images/skaramush-vandango.png',
-        links: {
-            spotify: 'https://open.spotify.com',
-            soundcloud: 'https://soundcloud.com'
-        }
+    "anger-uschis": {
+        name: "Anger Uschis",
+        bio: "Mit ihrem Debütalbum „politisch inkontinent“ liefern die Anger Uschis ein politisch orientiertes Mahnmal gegen Hass, Hetze und Faschismus."
     },
-    'silberstreif': {
-        name: 'Silberstreif',
-        bio: '',
-        image: 'images/silberstreif.png',
-        links: {
-            spotify: 'https://open.spotify.com'
-        }
+    "silberstreif": {
+        name: "Silberstreif",
+        bio: "Ihre Single flammend Herz avanciert bereits in kleineren Clubs zum Sommerhit und liefert den Soundtrack zum süßen Schmerz der sommerlichen Liebschaften."
+    },
+    "henri-bellieu": {
+        name: "Henri Bellieu",
+        bio: "Der charmante Franzose liefert mit seiner Single la Femme bereits seine zweite Ode an die Weiblichkeit."
+    },
+    "fleur-et-beunie": {
+        name: "Fléur et Beunié",
+        bio: "French House Duo mit Feu Léger."
+    },
+    "sukram": {
+        name: "SUKRAM",
+        bio: "Deutschland du mein Fiebertraum."
+    },
+    "skaramush-vandango": {
+        name: "SkaRamush Vandango",
+        bio: "Labelchef, Producer, DJ und NeuroCentric Projekt."
+    },
+    "anthony-sinclair": {
+        name: "Anthony Sinclair",
+        bio: "80s Synth Retro Artist."
     }
 };
 
-let video = document.getElementById("introVideo");
-let popup = document.getElementById("videoPopup");
+/* WELCOME */
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("welcomeTitle").textContent =
+        "Willkommen bei ROKKO! Records";
 
-function closeVideoPopup() {
-    popup.classList.add("hidden");
-    video.pause();
-}
+    document.getElementById("welcomeText").textContent =
+        "ROKKO! Records ist ein unabhängiges Musiklabel für elektronische und experimentelle Künstler.";
+});
 
-function toggleMute() {
-    video.muted = !video.muted;
-}
-
+/* MODAL */
 function openArtistModal(id) {
     const a = artistsData[id];
-
-    document.getElementById("modalArtistImage").src = a.image;
-    document.getElementById("modalArtistName").innerText = a.name;
-    document.getElementById("modalArtistBio").innerText = a.bio;
-
-    const box = document.getElementById("modalStreamingLinks");
-    box.innerHTML = "";
-
-    for (let k in a.links) {
-        let btn = document.createElement("a");
-        btn.href = a.links[k];
-        btn.innerText = k;
-        btn.className = "streaming-btn";
-        btn.target = "_blank";
-        box.appendChild(btn);
-    }
+    if (!a) return;
 
     document.getElementById("artistModal").classList.remove("hidden");
+    document.getElementById("modalArtistName").textContent = a.name;
+    document.getElementById("modalArtistBio").textContent = a.bio;
 }
 
 function closeArtistModal() {
@@ -58,5 +54,12 @@ function closeArtistModal() {
 
 window.openArtistModal = openArtistModal;
 window.closeArtistModal = closeArtistModal;
-window.closeVideoPopup = closeVideoPopup;
-window.toggleMute = toggleMute;
+
+/* CLICK EVENTS */
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".card").forEach(c => {
+        c.addEventListener("click", () => {
+            openArtistModal(c.dataset.artist);
+        });
+    });
+});
