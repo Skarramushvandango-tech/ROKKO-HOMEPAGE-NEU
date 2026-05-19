@@ -1,98 +1,103 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ROKKO! Records</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROKKO! Records</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<!-- VIDEO -->
+<!-- VIDEO POPUP -->
 <div id="videoPopup" class="video-popup hidden">
-    <div class="video-container">
-        <button class="close-btn" onclick="closeVideoPopup()">×</button>
+    <button class="close-popup" onclick="closeVideoPopup()">×</button>
 
+    <div class="video-container">
         <video id="introVideo" autoplay muted playsinline>
             <source src="videos/intro-web.mp4" type="video/mp4">
-            <source src="videos/intro-mobile.mp4" type="video/mp4">
         </video>
-
-        <button class="mute-btn" onclick="toggleMute()">🔊 Ton</button>
     </div>
+
+    <button id="muteBtn" class="mute-btn" onclick="toggleMute()">🔇 Unmute</button>
 </div>
 
-<!-- ARTIST MODAL FULLSCREEN -->
+<!-- ARTIST MODAL -->
 <div id="artistModal" class="artist-modal hidden">
-    <button class="modal-close" onclick="closeArtistModal()">×</button>
-
-    <img id="modalArtistImage">
-    <h2 id="modalArtistName"></h2>
-    <p id="modalArtistBio"></p>
+    <div class="modal-content">
+        <button class="close-popup" onclick="closeArtistModal()">×</button>
+        <img id="modalArtistImage" class="modal-artist-image">
+        <h2 id="modalArtistName"></h2>
+        <p id="modalArtistBio"></p>
+        <div id="modalStreamingLinks" class="streaming-links"></div>
+    </div>
 </div>
 
 <div class="container">
 
-<header class="header">
-    <img src="images/header.png">
-</header>
+    <header class="header">
+        <img src="images/header.png">
+    </header>
 
-<section class="welcome-section">
-    <div class="welcome-banner">Willkommen</div>
-    <div class="welcome-box">
-        <h1>ROKKO! Records</h1>
-        <p>Neurodiverse Musikplattform</p>
-    </div>
-</section>
-
-<section class="projects-section">
-    <div class="section-banner">Projekte</div>
-
-    <div class="grid">
-
-        <div class="card" onclick="openArtist('skaramush-vandango')">
-            <img src="images/skaramush-vandango.png">
+    <!-- WELCOME -->
+    <section>
+        <div class="section-banner">WELCOME</div>
+        <div class="welcome-box">
+            Wir sind ROKKO! Records
         </div>
+    </section>
 
-        <div class="card" onclick="openArtist('silberstreif')">
-            <img src="images/silberstreif.png">
+    <!-- ARTISTS -->
+    <section>
+        <div class="section-banner">PROJECTS</div>
+
+        <div class="projects-grid">
+
+            <div class="artist-card" onclick="openArtistModal('skaramush-vandango')">
+                <img src="images/skaramush-vandango.png">
+            </div>
+
+            <div class="artist-card" onclick="openArtistModal('silberstreif')">
+                <img src="images/silberstreif.png">
+            </div>
+
+            <div class="artist-card" onclick="openArtistModal('anger-uschis')">
+                <img src="images/anger-uschis.png">
+            </div>
+
+            <div class="artist-card" onclick="openArtistModal('henri-bellieu')">
+                <img src="images/henri-bellieu.png">
+            </div>
+
+            <div class="artist-card" onclick="openArtistModal('fleur-et-beunie')">
+                <img src="images/fleur-et-beunie.png">
+            </div>
+
+            <div class="artist-card" onclick="openArtistModal('sukram')">
+                <img src="images/sukram.png">
+            </div>
+
+            <div class="artist-card" onclick="openArtistModal('skank-schablonski')">
+                <img src="images/skank-schablonski.png">
+            </div>
+
+            <div class="artist-card" onclick="openArtistModal('anthony-sinclair')">
+                <img src="images/anthony-sinclair.png">
+            </div>
+
         </div>
+    </section>
 
-        <div class="card" onclick="openArtist('anger-uschis')">
-            <img src="images/anger-uschis.png">
-        </div>
+    <!-- MERCH -->
+    <section>
+        <div class="section-banner">MERCH</div>
 
-        <div class="card" onclick="openArtist('henri-bellieu')">
-            <img src="images/henri-bellieu.png">
-        </div>
-
-        <div class="card" onclick="openArtist('fleur-et-beunie')">
-            <img src="images/fleur-et-beunie.png">
-        </div>
-
-        <div class="card" onclick="openArtist('sukram')">
-            <img src="images/sukram.png">
-        </div>
-
-        <div class="card" onclick="openArtist('skank-schablonski')">
-            <img src="images/skank-schablonski.png">
-        </div>
-
-        <div class="card" onclick="openArtist('anthony-sinclair')">
-            <img src="images/anthony-sinclair.png">
-        </div>
-
-        <!-- MERCH -->
-        <a class="card merch" href="merch.png" target="_blank">
+        <a class="merch-link" href="https://rokko-records.myspreadshop.de" target="_blank">
             <img src="images/merch.png">
         </a>
-
-    </div>
-</section>
+    </section>
 
 </div>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
