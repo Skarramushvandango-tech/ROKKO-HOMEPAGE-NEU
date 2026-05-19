@@ -11,13 +11,13 @@
 <body>
 
 <header class="header">
-    <img src="images/header.png" alt="ROKKO HEADER">
+    <img src="images/header.png" alt="ROKKO">
 </header>
 
 <div class="container">
 
 <!-- WELCOME -->
-<section class="section">
+<section>
     <div class="banner-wrapper">
         <div class="banner-back orange"></div>
         <div class="banner-front black">
@@ -27,9 +27,8 @@
     </div>
 </section>
 
-<!-- ARTISTS -->
+<!-- ARTISTS (1 KACHEL SYSTEM) -->
 <section>
-
     <div class="banner-wrapper">
         <div class="banner-back black"></div>
         <div class="banner-front orange">
@@ -37,47 +36,26 @@
         </div>
     </div>
 
-    <div class="grid">
+    <div class="banner-wrapper">
+        <div class="banner-back black"></div>
 
-        <div class="card-wrapper" data-artist="anger-uschis">
-            <div class="card-back orange"></div>
-            <div class="card black"><img src="images/anger-uschis.png"></div>
+        <div class="banner-front orange">
+            <div class="artist-list">
+
+                <div class="artist-item" data-artist="anger-uschis">Anger Uschis</div>
+                <div class="artist-item" data-artist="silberstreif">Silberstreif</div>
+                <div class="artist-item" data-artist="henri-bellieu">Henri Bellieu</div>
+                <div class="artist-item" data-artist="fleur-et-beunie">Fléur et Beunié</div>
+                <div class="artist-item" data-artist="sukram">SUKRAM</div>
+                <div class="artist-item" data-artist="skaramush-vandango">SkaRamush Vandango</div>
+                <div class="artist-item" data-artist="anthony-sinclair">Anthony Sinclair</div>
+
+            </div>
         </div>
-
-        <div class="card-wrapper" data-artist="silberstreif">
-            <div class="card-back black"></div>
-            <div class="card orange"><img src="images/silberstreif.png"></div>
-        </div>
-
-        <div class="card-wrapper" data-artist="henri-bellieu">
-            <div class="card-back orange"></div>
-            <div class="card black"><img src="images/henri-bellieu.png"></div>
-        </div>
-
-        <div class="card-wrapper" data-artist="fleur-et-beunie">
-            <div class="card-back black"></div>
-            <div class="card orange"><img src="images/fleur-et-beunie.png"></div>
-        </div>
-
-        <div class="card-wrapper" data-artist="sukram">
-            <div class="card-back orange"></div>
-            <div class="card black"><img src="images/sukram.png"></div>
-        </div>
-
-        <div class="card-wrapper" data-artist="skaramush-vandango">
-            <div class="card-back black"></div>
-            <div class="card orange"><img src="images/skaramush-vandango.png"></div>
-        </div>
-
-        <div class="card-wrapper" data-artist="anthony-sinclair">
-            <div class="card-back orange"></div>
-            <div class="card black"><img src="images/anthony-sinclair.png"></div>
-        </div>
-
     </div>
 </section>
 
-<!-- MERCH (FIXED) -->
+<!-- MERCH (FIX: CLICK OPENS SHOP) -->
 <section>
     <div class="banner-wrapper">
         <div class="banner-back orange"></div>
@@ -86,8 +64,8 @@
         </div>
     </div>
 
-    <a href="https://DEIN-SHOP-LINK" target="_blank" rel="noopener noreferrer">
-        <img src="images/merch.png" class="fullimg">
+    <a href="https://rokko-records.myspreadshop.de" target="_blank" rel="noopener noreferrer">
+        <img src="images/merch.png" class="fullimg" alt="Merch Shop">
     </a>
 </section>
 
@@ -111,6 +89,7 @@
         <div class="banner-front black">
             <h2>Impressum</h2>
         </div>
+
     </div>
 
     <p>ROKKO! Records ©</p>
@@ -118,6 +97,7 @@
 
 </div>
 
+<!-- MODAL -->
 <div id="artistModal" class="modal hidden">
     <div class="modal-content">
         <button onclick="closeArtistModal()">X</button>
