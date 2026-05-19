@@ -1,32 +1,11 @@
 const artists = {
-    "anger-uschis": {
-        name:"Anger Uschis",
-        bio:"Politisches Debütalbum gegen Hass und Hetze."
-    },
-    "silberstreif": {
-        name:"Silberstreif",
-        bio:"Sommerhit mit emotionalem Sound."
-    },
-    "henri-bellieu": {
-        name:"Henri Bellieu",
-        bio:"Französischer Pop mit Stil."
-    },
-    "fleur-et-beunie": {
-        name:"Fléur et Beunié",
-        bio:"French House Projekt."
-    },
-    "sukram": {
-        name:"SUKRAM",
-        bio:"Elektronischer Kommentar zur Gegenwart."
-    },
-    "skaramush-vandango": {
-        name:"SkaRamush Vandango",
-        bio:"Labelchef und Producer."
-    },
-    "anthony-sinclair": {
-        name:"Anthony Sinclair",
-        bio:"80s Synth Ästhetik."
-    }
+    "anger-uschis": { name:"Anger Uschis", bio:"Politisches Debütalbum." },
+    "silberstreif": { name:"Silberstreif", bio:"Sommer Soundtrack." },
+    "henri-bellieu": { name:"Henri Bellieu", bio:"Französischer Pop." },
+    "fleur-et-beunie": { name:"Fléur et Beunié", bio:"French House." },
+    "sukram": { name:"SUKRAM", bio:"Elektronische Gegenwart." },
+    "skaramush-vandango": { name:"SkaRamush Vandango", bio:"Label & Producer." },
+    "anthony-sinclair": { name:"Anthony Sinclair", bio:"80s Synth." }
 };
 
 document.addEventListener("DOMContentLoaded", () => {
