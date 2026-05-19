@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,45 +15,38 @@
     <video id="introVideo" autoplay muted playsinline></video>
 
     <div class="intro-ui">
-        <div id="closeIntro" class="btn-x">X</div>
-        <div id="muteBtn" class="btn-mute">Unmute</div>
+        <div id="closeIntro" class="btn-x">✕</div>
+        <div id="muteBtn" class="btn-mute">Mute</div>
     </div>
 </div>
 
-<header>
-    <img src="images/header.png" alt="">
-</header>
-
-<!-- CARD SYSTEM -->
-<section class="section-card frame-orange">
-    <div class="artist-grid">
-
-        <img class="artist" src="images/anger-uschis.png" data-name="Anger Uschis" data-bio="Bio 1">
-        <img class="artist" src="images/silberstreif.png" data-name="Silberstreif" data-bio="Bio 2">
-
-        <img class="artist" src="images/henri-bellieu.png" data-name="Henri Bellieu" data-bio="Bio 3">
-        <img class="artist" src="images/fleur-et-beunie.png" data-name="Fleur et Beunie" data-bio="Bio 4">
-
-        <img class="artist" src="images/sukram.png" data-name="SUKRAM" data-bio="Bio 5">
-        <img class="artist" src="images/skaramush-vandango.png" data-name="SkaRamush Vandango" data-bio="Bio 6">
-
-        <img class="artist" src="images/anthony-sinclair.png" data-name="Anthony Sinclair" data-bio="Bio 7">
-
-    </div>
-</section>
+<!-- GRID -->
+<section class="artist-grid" id="artistGrid"></section>
 
 <!-- SHOP -->
-<section>
-    <a href="https://rokko-records.myspreadshop.de" target="_blank">
-        <img src="images/merch.png" alt="">
+<section class="shop">
+    <a href="https://shop.example.com" target="_blank">
+        <img src="images/shop.png">
     </a>
 </section>
 
+<!-- NEWSLETTER -->
+<section class="newsletter">
+    <h2>Newsletter</h2>
+    <input type="email" placeholder="Email">
+    <label><input type="checkbox"> DSGVO akzeptieren</label>
+    <button>Submit</button>
+</section>
+
 <!-- POPUP -->
-<div id="popup" class="hidden">
-    <div id="closePopup">X</div>
-    <h1 id="name"></h1>
-    <p id="bio"></p>
+<div id="popup" class="popup hidden">
+    <div id="closePopup" class="popup-close">✕</div>
+
+    <img id="popupImage" class="popup-image">
+    <h1 id="popupName"></h1>
+    <p id="popupBio"></p>
+
+    <div id="popupIcons" class="icon-grid"></div>
 </div>
 
 <script src="script.js"></script>
