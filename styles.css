@@ -7,12 +7,7 @@
 body {
     background:#000;
     color:#E7760D;
-    font-family:Arial, sans-serif;
-}
-
-img {
-    max-width:100%;
-    display:block;
+    font-family:Arial;
 }
 
 .container {
@@ -36,7 +31,6 @@ img {
     transform:rotate(-4deg);
     z-index:1;
     border:2px solid #E7760D;
-    pointer-events:none;
 }
 
 .banner-front {
@@ -49,24 +43,27 @@ img {
 .black { background:#000; }
 .orange { background:#E7760D; color:#000; }
 
-/* ARTIST LIST */
-.artist-list {
-    display:flex;
-    flex-direction:column;
+/* ARTIST GRID */
+.artist-grid {
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
     gap:10px;
 }
 
-.artist-item {
-    padding:10px 12px;
-    border:2px solid #000;
-    background:#E7760D;
-    color:#000;
-    font-weight:bold;
+.artist-card {
+    overflow:hidden;
     cursor:pointer;
+    border:2px solid #000;
+}
+
+.artist-card img {
+    width:100%;
+    display:block;
 }
 
 /* MERCH */
 .fullimg {
+    width:100%;
     border:2px solid #E7760D;
 }
 
