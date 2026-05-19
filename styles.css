@@ -18,7 +18,7 @@ html {
 body {
     background-color: var(--black);
     color: var(--orange);
-    font-family: Life Savers;
+    font-family: 'Life Savers', cursive;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -45,7 +45,7 @@ body {
 }
 
 .header-image {
-    width: 95%;
+    width: 100%;
     display: block;
     border-radius: 15px;
     object-fit: cover;
@@ -94,6 +94,10 @@ body {
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .close-popup:hover {
@@ -130,12 +134,7 @@ body {
     margin-top: 20px;
 }
 
-/* ===== PROJECTS SECTION ===== */
-.projects-section {
-    margin-bottom: 100px;
-    perspective: 1200px;
-}
-
+/* ===== SECTION BANNER (shared) ===== */
 .section-banner {
     background-color: var(--orange);
     color: var(--brown);
@@ -150,6 +149,12 @@ body {
     transform: rotate(-2deg);
     display: inline-block;
     margin-left: 60px;
+}
+
+/* ===== PROJECTS SECTION ===== */
+.projects-section {
+    margin-bottom: 100px;
+    perspective: 1200px;
 }
 
 .projects-grid {
@@ -169,17 +174,15 @@ body {
     cursor: pointer;
     aspect-ratio: 1;
     transition: all 0.3s ease;
-    border-radius: 0 !important;
+    border-radius: 0;
 }
 
-/* odd */
 .artist-card:nth-child(odd) {
     background-color: var(--black);
     border: 2.5pt solid var(--orange);
     transform: rotate(-1.5deg);
 }
 
-/* even */
 .artist-card:nth-child(even) {
     background-color: var(--orange);
     border: 2.5pt solid var(--black);
@@ -194,9 +197,9 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
-/* label */
 .artist-label {
     position: absolute;
     bottom: 0;
@@ -249,21 +252,145 @@ body {
     overflow-y: auto;
 }
 
-/* ===== YOUTUBE ===== */
+/* ===== YOUTUBE SECTION ===== */
+.youtube-section {
+    margin-bottom: 100px;
+    perspective: 1200px;
+}
+
 .youtube-container {
     background-color: var(--dark-bg);
     border: 2.5pt solid var(--orange);
     border-radius: 30px;
-    padding: 30px;
+    padding: 50px 30px;
     overflow: visible;
 }
 
-.youtube-container iframe {
+.youtube-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.youtube-item {
+    position: relative;
     width: 100%;
-    height: 420px;
-    transform: translateY(-20px);
+    aspect-ratio: 16 / 9;
     border: 2.5pt solid var(--orange);
     border-radius: 10px;
+    overflow: hidden;
+}
+
+.youtube-item:nth-child(odd) {
+    transform: rotate(-1.5deg);
+}
+
+.youtube-item:nth-child(even) {
+    transform: rotate(1.5deg);
+}
+
+.youtube-item iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* ===== MERCH SECTION ===== */
+.merch-section {
+    margin-bottom: 150px;
+    perspective: 1200px;
+}
+
+.merch-box {
+    background-color: var(--dark-bg);
+    border: 2.5pt solid var(--orange);
+    border-radius: 30px;
+    padding: 50px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.merch-btn {
+    display: inline-block;
+    background-color: var(--orange);
+    color: var(--black);
+    font-family: 'Life Savers', cursive;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px 50px;
+    border-radius: 30px;
+    border: 2.5pt solid var(--black);
+    cursor: pointer;
+    text-decoration: none;
+    transform: rotate(-1.5deg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 4px 4px 0px var(--brown);
+    letter-spacing: 1px;
+}
+
+.merch-btn:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 6px 6px 0px var(--brown);
+}
+
+/* Merch Popup Modal */
+.merch-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.merch-modal.hidden {
+    display: none;
+}
+
+.merch-modal-content {
+    position: relative;
+    background-color: var(--black);
+    border: 2.5pt solid var(--orange);
+    border-radius: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.merch-modal-close {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    background: var(--orange);
+    color: var(--black);
+    border: none;
+    font-size: 32px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.merch-modal-close:hover {
+    transform: scale(1.1);
 }
 
 /* ===== NEWSLETTER ===== */
@@ -276,10 +403,40 @@ body {
     text-align: center;
 }
 
+.newsletter-form input[type="email"] {
+    background-color: var(--black);
+    border: 2.5pt solid var(--orange);
+    border-radius: 10px;
+    color: var(--orange);
+    padding: 12px 20px;
+    font-size: 16px;
+    font-family: 'Life Savers', cursive;
+    width: 100%;
+    max-width: 400px;
+}
+
 .newsletter-form input[type="email"]:focus {
     outline: none;
     border-color: #ff8c1a;
     box-shadow: 0 0 10px rgba(231, 118, 13, 0.3);
+}
+
+.newsletter-form button {
+    background-color: var(--orange);
+    color: var(--black);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Life Savers', cursive;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.2s ease;
+}
+
+.newsletter-form button:hover {
+    transform: scale(1.05);
 }
 
 .checkbox-label input[type="checkbox"] {
@@ -295,7 +452,7 @@ body {
     text-align: center;
 }
 
-/* ===== ANIMATION ===== */
+/* ===== ANIMATIONS ===== */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -304,16 +461,41 @@ body {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .container {
-        padding: 0;
+        max-width: 100%;
+        padding: 0 10px 40px 10px;
     }
 
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        padding: 20px;
+        gap: 15px;
+        padding: 20px 15px;
     }
 
-    .youtube-container iframe {
-        height: 300px;
+    .youtube-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .youtube-container {
+        padding: 30px 15px;
+    }
+
+    .merch-btn {
+        font-size: 22px;
+        padding: 16px 36px;
+    }
+
+    .section-banner,
+    .welcome-banner {
+        font-size: 24px;
+        padding: 15px 25px;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid,
+    .youtube-grid {
+        grid-template-columns: 1fr;
     }
 }
