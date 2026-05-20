@@ -285,9 +285,9 @@ body {
 }
 .img-link-btn img {
   display: block;
-  width: 780px;
-  height: 280px;
-  object-fit: contain;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* ── Press Card (collapsed by default) ───────────── */
