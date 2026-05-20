@@ -287,7 +287,6 @@ body {
   display: block;
   width: 780px;
   height: 340px;
-  max-height: 280px;
   object-fit: contain;
 }
 
