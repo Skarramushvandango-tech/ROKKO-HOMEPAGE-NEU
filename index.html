@@ -1,77 +1,316 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ROKKO! Records</title>
-<link rel="stylesheet" href="styles.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROKKO! Records</title>
+  <meta name="description" content="ROKKO! Records — neurodiverse Musik aus dem Ruhrpott. Kein Genre, keine Schublade, nur Ohrmuschel-Propaganda." />
+  <meta property="og:title" content="ROKKO! Records" />
+  <meta property="og:description" content="ROKKO! Records — neurodiverse Musik aus dem Ruhrpott." />
+  <meta property="og:type" content="website" />
 
+  <!--
+    FONTS — Dateien müssen im Repo vorhanden sein:
+    fonts/LifeSaver-Regular.ttf
+    fonts/LifeSavers-Bold.ttf
+    fonts/LifeSavers-ExtraBold.ttf
+    → Werden über @font-face in styles.css geladen.
+  -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
 <body>
 
-<!-- HEADER -->
-<header class="header">
-    <img src="images/header.png" alt="ROKKO! Records Header">
-</header>
+  <div class="bg-stripe"></div>
 
-<!-- INTRO -->
-<div id="intro">
-
-    <video id="introVideo" autoplay muted playsinline preload="auto">
-        <source src="videos/intro-web.mp4" type="video/mp4">
-    </video>
-
-    <div class="intro-ui">
-        <div id="closeIntro" class="btn-x">✕</div>
-        <div id="muteBtn" class="btn-mute">Mute</div>
+  <!-- ── HEADER ──────────────────────────────────── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="./images/header.png" alt="ROKKO! Records" class="header-img" />
+      <button class="video-trigger" id="videoTrigger" aria-label="Intro Video abspielen">
+        &#9654; INTRO VIDEO
+      </button>
     </div>
+  </header>
 
-</div>
+  <main class="content-wrapper">
 
-<!-- HERO / WELCOME -->
-<section class="hero">
-    <div class="hero-card">
-        <h1>Willkommen bei ROKKO! Records</h1>
-        <h2>Ein Label für neurodiverse Künstler aus dem Spektrum</h2>
-        <p>
-            ROKKO! Records ist ein unabhängiges Label mit Fokus auf authentische,
-            ungefilterte künstlerische Ausdrucksformen und individuelle kreative Profile.
-        </p>
+    <!-- CARD 1: Welcome — Variant A (Orange Front / Dark Back) -->
+    <section class="card-stack variant-a">
+      <div class="card-back"></div>
+      <div class="card-front">
+        <h2 class="welcome-headline">Wir sind ROKKO! Records</h2>
+        <p class="welcome-sub">Unser Herz schlägt im Pott</p>
+        <p>Unsere Ohrmuschel-Propaganda ist grenzenlos</p>
+        <p>Denn ROKKO! hat kein Genre, keine Farbe, keine Schublade. Aber ROKKO! ist neurodiverse und arbeitet nur mit Künstlern aus dem Spektrum zusammen.</p>
+        <p>Da wir Künstler aus dem Spektrum uns oft eher ungern selbstdarstellen, wird bei ROKKO! Das Augenmerk der Ohrmuschel geschenkt.</p>
+      </div>
+    </section>
+
+    <!-- CARD 2: Artists — Variant B (Dark Front / Orange Back) -->
+    <section class="card-stack variant-b">
+      <div class="card-back"></div>
+      <div class="card-front">
+        <h2 class="section-title">Unsere Künstler</h2>
+        <div class="artist-grid" id="artistGrid">
+
+          <div class="artist-tile" data-artist="anger-uschis" tabindex="0" role="button" aria-label="Anger Uschis Profil öffnen">
+            <div class="artist-tile-img">
+              <img src="./images/anger-uschis.png" alt="Anger Uschis" loading="lazy" />
+            </div>
+            <span class="artist-name">Anger Uschis</span>
+          </div>
+
+          <div class="artist-tile" data-artist="silberstreif" tabindex="0" role="button" aria-label="Silberstreif Profil öffnen">
+            <div class="artist-tile-img">
+              <img src="./images/silberstreif.png" alt="Silberstreif" loading="lazy" />
+            </div>
+            <span class="artist-name">Silberstreif</span>
+          </div>
+
+          <div class="artist-tile" data-artist="anthony-sinclair" tabindex="0" role="button" aria-label="Anthony Sinclair Profil öffnen">
+            <div class="artist-tile-img">
+              <img src="./images/anthony-sinclair.png" alt="Anthony Sinclair" loading="lazy" />
+            </div>
+            <span class="artist-name">Anthony Sinclair</span>
+          </div>
+
+          <div class="artist-tile" data-artist="sukram" tabindex="0" role="button" aria-label="SUKRAM Profil öffnen">
+            <div class="artist-tile-img">
+              <img src="./images/sukram.png" alt="SUKRAM" loading="lazy" />
+            </div>
+            <span class="artist-name">SUKRAM</span>
+          </div>
+
+          <div class="artist-tile" data-artist="fleur-et-beunie" tabindex="0" role="button" aria-label="Fléur et Beunié Profil öffnen">
+            <div class="artist-tile-img">
+              <img src="./images/fleur-et-beunie.png" alt="Fléur et Beunié" loading="lazy" />
+            </div>
+            <span class="artist-name">Fléur et Beunié</span>
+          </div>
+
+          <div class="artist-tile" data-artist="skaramush-vandango" tabindex="0" role="button" aria-label="SkaRamush Vandango Profil öffnen">
+            <div class="artist-tile-img">
+              <img src="./images/skaramush-vandango.png" alt="SkaRamush Vandango" loading="lazy" />
+            </div>
+            <span class="artist-name">SkaRamush Vandango</span>
+          </div>
+
+          <div class="artist-tile" data-artist="henri-bellieu" tabindex="0" role="button" aria-label="Henri Bellieu Profil öffnen">
+            <div class="artist-tile-img">
+              <img src="./images/henri-bellieu.png" alt="Henri Bellieu" loading="lazy" />
+            </div>
+            <span class="artist-name">Henri Bellieu</span>
+          </div>
+
+          <div class="artist-tile" data-artist="skank-schablonski" tabindex="0" role="button" aria-label="Skank Schablonski Profil öffnen">
+            <div class="artist-tile-img">
+              <img src="./images/placeholder.png" alt="Skank Schablonski" loading="lazy" />
+            </div>
+            <span class="artist-name">Skank Schablonski</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CARD 3: Merch — Variant A -->
+    <section class="card-stack variant-a">
+      <div class="card-back"></div>
+      <div class="card-front card-link-block">
+        <h2 class="section-title">Merch</h2>
+        <a href="https://rokko-records.myspreadshop.de" target="_blank" rel="noopener noreferrer" class="img-link-btn" aria-label="ROKKO! Records Merch Shop öffnen">
+          <img src="./images/merch.png" alt="ROKKO! Records Merch Shop" />
+        </a>
+      </div>
+    </section>
+
+    <!-- CARD 4: YouTube — Variant B -->
+    <section class="card-stack variant-b">
+      <div class="card-back"></div>
+      <div class="card-front card-link-block">
+        <h2 class="section-title">YouTube</h2>
+        <a href="https://www.youtube.com/@ROKKORecords" target="_blank" rel="noopener noreferrer" class="img-link-btn" aria-label="ROKKO! Records YouTube Kanal öffnen">
+          <img src="./images/youtube.png" alt="ROKKO! Records auf YouTube" />
+        </a>
+      </div>
+    </section>
+
+    <!-- CARD 5: Pressefotos — Variant A (geschlossen / aufklappbar) -->
+    <section class="card-stack variant-a" id="pressCardStack">
+      <div class="card-back"></div>
+      <div class="card-front">
+
+        <!-- Klickbarer Header — öffnet/schließt die Galerie -->
+        <div class="press-card-header" id="pressCardHeader" tabindex="0" role="button" aria-controls="pressGridWrap">
+          <h2 class="section-title">Pressefotos</h2>
+          <button class="press-toggle-btn" id="pressToggleBtn" aria-expanded="false" aria-label="Pressefotos öffnen" tabindex="-1">
+            &#9660;
+          </button>
+        </div>
+
+        <!-- Versteckte Galerie — wird durch Klick auf Header aufgeklappt -->
+        <div class="press-grid-wrap" id="pressGridWrap">
+          <div class="press-grid">
+
+            <div class="press-photo size-lg" data-index="0" tabindex="0" role="button" aria-label="Anger Uschis Pressefoto 1 vergrößern">
+              <img src="./pressefotos/anger-uschis-press1.png" alt="Anger Uschis Pressefoto 1" loading="lazy" />
+              <span class="press-label">Anger Uschis</span>
+            </div>
+            <div class="press-photo size-sm" data-index="1" tabindex="0" role="button" aria-label="Anger Uschis Pressefoto 2 vergrößern">
+              <img src="./pressefotos/anger-uschis-press2.png" alt="Anger Uschis Pressefoto 2" loading="lazy" />
+              <span class="press-label">Anger Uschis</span>
+            </div>
+            <div class="press-photo size-sm" data-index="2" tabindex="0" role="button" aria-label="Fléur et Beunié Pressefoto 1 vergrößern">
+              <img src="./pressefotos/fleur-et-beunie-press1.png" alt="Fléur et Beunié Pressefoto 1" loading="lazy" />
+              <span class="press-label">Fléur et Beunié</span>
+            </div>
+            <div class="press-photo size-lg" data-index="3" tabindex="0" role="button" aria-label="Fléur et Beunié Pressefoto 2 vergrößern">
+              <img src="./pressefotos/fleur-et-beunie-press2.png" alt="Fléur et Beunié Pressefoto 2" loading="lazy" />
+              <span class="press-label">Fléur et Beunié</span>
+            </div>
+            <div class="press-photo size-md" data-index="4" tabindex="0" role="button" aria-label="Henri Bellieu Pressefoto 1 vergrößern">
+              <img src="./pressefotos/henri-bellieu-press1.png" alt="Henri Bellieu Pressefoto 1" loading="lazy" />
+              <span class="press-label">Henri Bellieu</span>
+            </div>
+            <div class="press-photo size-md" data-index="5" tabindex="0" role="button" aria-label="Henri Bellieu Pressefoto 2 vergrößern">
+              <img src="./pressefotos/henri-bellieu-press2.png" alt="Henri Bellieu Pressefoto 2" loading="lazy" />
+              <span class="press-label">Henri Bellieu</span>
+            </div>
+            <div class="press-photo size-sm" data-index="6" tabindex="0" role="button" aria-label="Skank Schablonski Pressefoto 1 vergrößern">
+              <img src="./pressefotos/skank-schablonski-press1.png" alt="Skank Schablonski Pressefoto 1" loading="lazy" />
+              <span class="press-label">Skank Schablonski</span>
+            </div>
+            <div class="press-photo size-lg" data-index="7" tabindex="0" role="button" aria-label="Skank Schablonski Pressefoto 2 vergrößern">
+              <img src="./pressefotos/skank-schablonski-press2.png" alt="Skank Schablonski Pressefoto 2" loading="lazy" />
+              <span class="press-label">Skank Schablonski</span>
+            </div>
+            <div class="press-photo size-md" data-index="8" tabindex="0" role="button" aria-label="Skank Schablonski Pressefoto 3 vergrößern">
+              <img src="./pressefotos/skank-schablonski-press3.png" alt="Skank Schablonski Pressefoto 3" loading="lazy" />
+              <span class="press-label">Skank Schablonski</span>
+            </div>
+            <div class="press-photo size-sm" data-index="9" tabindex="0" role="button" aria-label="Skank Schablonski Pressefoto 4 vergrößern">
+              <img src="./pressefotos/skank-schablonski-press4.png" alt="Skank Schablonski Pressefoto 4" loading="lazy" />
+              <span class="press-label">Skank Schablonski</span>
+            </div>
+            <div class="press-photo size-lg" data-index="10" tabindex="0" role="button" aria-label="SkaRamush Pressefoto 1 vergrößern">
+              <img src="./pressefotos/skaramush-press1.png" alt="SkaRamush Vandango Pressefoto 1" loading="lazy" />
+              <span class="press-label">SkaRamush Vandango</span>
+            </div>
+            <div class="press-photo size-sm" data-index="11" tabindex="0" role="button" aria-label="SkaRamush Pressefoto 2 vergrößern">
+              <img src="./pressefotos/skaramush-press2.png" alt="SkaRamush Vandango Pressefoto 2" loading="lazy" />
+              <span class="press-label">SkaRamush Vandango</span>
+            </div>
+            <div class="press-photo size-md" data-index="12" tabindex="0" role="button" aria-label="SkaRamush Pressefoto 3 vergrößern">
+              <img src="./pressefotos/skaramush-press3.png" alt="SkaRamush Vandango Pressefoto 3" loading="lazy" />
+              <span class="press-label">SkaRamush Vandango</span>
+            </div>
+            <div class="press-photo size-sm" data-index="13" tabindex="0" role="button" aria-label="SkaRamush Pressefoto 4 vergrößern">
+              <img src="./pressefotos/skaramush-press4.png" alt="SkaRamush Vandango Pressefoto 4" loading="lazy" />
+              <span class="press-label">SkaRamush Vandango</span>
+            </div>
+            <div class="press-photo size-lg" data-index="14" tabindex="0" role="button" aria-label="SkaRamush Pressefoto 5 vergrößern">
+              <img src="./pressefotos/skaramush-press5.png" alt="SkaRamush Vandango Pressefoto 5" loading="lazy" />
+              <span class="press-label">SkaRamush Vandango</span>
+            </div>
+            <div class="press-photo size-md" data-index="15" tabindex="0" role="button" aria-label="SUKRAM Pressefoto 1 vergrößern">
+              <img src="./pressefotos/sukram-press1.png" alt="SUKRAM Pressefoto 1" loading="lazy" />
+              <span class="press-label">SUKRAM</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CARD 6: Kontakt — Variant B -->
+    <section class="card-stack variant-b">
+      <div class="card-back"></div>
+      <div class="card-front">
+        <h2 class="section-title">Kontakt</h2>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">Vorname *</label>
+              <input type="text" id="firstName" name="firstName" required placeholder="Vorname" />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Name *</label>
+              <input type="text" id="lastName" name="lastName" required placeholder="Nachname" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">E-Mail Adresse *</label>
+            <input type="email" id="email" name="email" required placeholder="deine@email.de" />
+          </div>
+          <div class="form-group">
+            <label for="message">Nachricht *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Schreib uns..."></textarea>
+          </div>
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="privacy" name="privacy" required />
+              <span class="checkbox-custom"></span>
+              <span class="checkbox-text">Ich stimme der Verarbeitung meiner Daten zum Zweck der Kontaktaufnahme zu. *</span>
+            </label>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">Absenden</button>
+          </div>
+          <div id="formStatus" class="form-status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>ROKKO! Records &nbsp;|&nbsp; Duisburg &nbsp;|&nbsp; SkaRamush Vandango</p>
+  </footer>
+
+  <!-- Artist Popup Modal -->
+  <div class="modal-overlay" id="artistModal" role="dialog" aria-modal="true" aria-labelledby="artistModalName">
+    <div class="modal-card artist-modal-card">
+      <button class="modal-close" id="artistModalClose" aria-label="Schließen">&#x2715;</button>
+      <div class="artist-modal-inner">
+        <div class="artist-modal-img-wrap">
+          <img id="artistModalImg" src="" alt="" />
+        </div>
+        <div class="artist-modal-info">
+          <h3 id="artistModalName"></h3>
+          <p id="artistModalBio"></p>
+          <div class="artist-links" id="artistModalLinks"></div>
+        </div>
+      </div>
     </div>
-</section>
+  </div>
 
-<!-- ARTISTS -->
-<section class="artist-grid" id="artistGrid"></section>
+  <!-- Press Photo Lightbox -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Pressefoto Vollbild">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Schließen">&#x2715;</button>
+    <div class="lightbox-img-wrap">
+      <img id="lightboxImg" src="" alt="" />
+    </div>
+    <div class="lightbox-nav">
+      <button class="lightbox-btn prev" id="lightboxPrev" aria-label="Vorheriges Bild">&#8592;</button>
+      <button class="lightbox-btn next" id="lightboxNext" aria-label="Nächstes Bild">&#8594;</button>
+    </div>
+  </div>
 
-<!-- SHOP -->
-<section class="shop">
-    <a href="https://rokko-records.myspreadshop.de/" target="_blank" rel="noopener noreferrer">
-        <img src="images/shop.png" alt="Shop">
-    </a>
-</section>
+  <!-- Video Modal — Vollbild Popup -->
+  <div class="modal-overlay" id="videoModal" role="dialog" aria-modal="true" aria-label="Intro Video">
+    <div class="video-modal-inner">
+      <button class="video-modal-close" id="videoModalClose" aria-label="Video schließen">&#x2715;</button>
+      <video id="introVideo" playsinline muted>
+        <source id="videoSrcMp4" src="" type="video/mp4" />
+        Dein Browser unterstützt kein Video.
+      </video>
+      <button class="mute-btn" id="muteBtn" aria-label="Ton an">
+        <span id="muteIcon">&#128263;</span>
+      </button>
+    </div>
+  </div>
 
-<!-- NEWSLETTER -->
-<section class="newsletter">
-    <h2>Newsletter</h2>
-    <input type="email" placeholder="Email">
-    <label>
-        <input type="checkbox">
-        DSGVO akzeptieren
-    </label>
-    <button>Submit</button>
-</section>
-
-<!-- POPUP -->
-<div id="popup" class="popup hidden">
-    <div id="closePopup" class="popup-close">✕</div>
-
-    <img id="popupImage" alt="Artist Image">
-    <h1 id="popupName"></h1>
-    <p id="popupBio"></p>
-
-    <div id="popupIcons" class="icon-grid"></div>
-</div>
-
-<script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
